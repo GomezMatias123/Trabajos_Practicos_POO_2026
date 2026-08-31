@@ -1,0 +1,34 @@
+#BlueJ class context
+#Sun Aug 23 20:29:53 ART 2026
+comment0.target=Laboratorio
+comment0.text=\r\n Write a description of class Laboratorio here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment1.params=p_nombre p_domicilio p_telefono p_compraMin p_diaEnt
+comment1.target=Laboratorio(java.lang.String, java.lang.String, java.lang.String, int, int)
+comment1.text=\r\n Metodo constructor perteneciente a la clase laboratorio, se utiliza dos constructores gracias \r\n a la posibildad de poder sobrecargarlos y diferenciarlos con sus parametros al recibir una \r\n cantidad diferentes a pesar de ser los mismos parametros que se envian.\r\n
+comment10.target=java.lang.String getTelefono()
+comment11.target=int getCompraMin()
+comment12.target=int getDiaEntrega()
+comment13.params=p_compraMin
+comment13.target=void nuevaCompraMinima(int)
+comment13.text=\r\n Metodos nuevaCompraMinima y nuevoDiaEntrega que permiten modificar los atributos del objeto\r\n instanciado, funciona como prevencion ante cambios de politicas o reglas de negocio \r\n de la empresa que puedan cambiar con el tiempo.\r\n
+comment14.params=p_diaEnt
+comment14.target=void nuevoDiaEntrega(int)
+comment15.target=void mostrar()
+comment15.text=\r\n Metodos mostrar para imprmir toda la informacion en el formato indicado de la empresa/\r\n laboratorio.\r\n
+comment2.params=p_nombre p_domicilio p_telefono
+comment2.target=Laboratorio(java.lang.String, java.lang.String, java.lang.String)
+comment3.params=p_nombre
+comment3.target=void setNombre(java.lang.String)
+comment3.text=\r\n Setter correspondientes para poder instanciar objetos y darle los valores a sus atributos.\r\n\r\n
+comment4.params=p_domicilio
+comment4.target=void setDomicilio(java.lang.String)
+comment5.params=p_telefono
+comment5.target=void setTelefono(java.lang.String)
+comment6.params=p_compraMin
+comment6.target=void setCompraMin(int)
+comment7.params=p_diaEnt
+comment7.target=void setDiaEntrega(int)
+comment8.target=java.lang.String getNombre()
+comment8.text=\r\n Getters correspondientes para poder obtener los datos/valores de los atributos de los objetos\r\n de la clase.\r\n\r\n
+comment9.target=java.lang.String getDomicilio()
+numComments=16

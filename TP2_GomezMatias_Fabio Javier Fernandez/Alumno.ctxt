@@ -1,0 +1,35 @@
+#BlueJ class context
+#Sun Aug 23 20:30:06 ART 2026
+comment0.target=Alumno
+comment0.text=\r\n Write a description of class Alumno here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment1.params=p_lu p_nombre p_apellido
+comment1.target=Alumno(int, java.lang.String, java.lang.String)
+comment1.text=\r\n Metodo constructor de la clase Alumno.\r\n
+comment10.params=p_N1
+comment10.target=double setNota1(double)
+comment10.text=\r\n Reciben por parametro las notas ingresadas respectivas de cada, mediante los parametros del\r\n metodo ejecutable de la clase correspondiente "notasAlumnos"\r\n
+comment11.params=p_N2
+comment11.target=double setNota2(double)
+comment12.target=boolean aprueba()
+comment12.text=\r\n Dentro del metodo aprueba() se determina si el alumno cumple las condiciones necesarias\r\n para estar aprobado devolviendo un dato boleano "true", caso contrario devuelve false"\r\n
+comment13.target=java.lang.String leyendaAprueba()
+comment13.text=\r\n Segun el dato obtenido en el metodo aprueba() imprime la leyenda correspondiente si esta\r\n aprobado o desaprobado.\r\n
+comment14.target=double promedio()
+comment14.text=\r\n Determina mediante un calculo de las notas de cada alumno su promedio.\r\n
+comment15.target=java.lang.String nomYApe()
+comment15.text=\r\n Implementacion de los metodos nomYape y apeYnom para la correcta\r\n impresion de los datos solicitados.\r\n
+comment16.target=java.lang.String apeYNom()
+comment17.target=void mostrar()
+comment2.params=p_lu
+comment2.target=void setLU(int)
+comment2.text=\r\n Setter y getter de los objetos de la clase Alumno.\r\n
+comment3.params=p_apellido
+comment3.target=void setApellido(java.lang.String)
+comment4.params=p_nombre
+comment4.target=void setNombre(java.lang.String)
+comment5.target=int getLU()
+comment6.target=java.lang.String getNombre()
+comment7.target=java.lang.String getApellido()
+comment8.target=double getNota1()
+comment9.target=double getNota2()
+numComments=18

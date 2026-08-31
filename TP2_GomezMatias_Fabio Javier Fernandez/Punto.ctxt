@@ -1,0 +1,22 @@
+#BlueJ class context
+#Sun Aug 23 20:30:41 ART 2026
+comment0.target=Punto
+comment0.text=\r\n Write a description of class Punto here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0\r\n
+comment1.target=Punto()
+comment1.text=\r\n Constructores sobrecargados de la clase Punto\r\n
+comment2.params=p_x p_y
+comment2.target=Punto(double, double)
+comment3.params=p_x
+comment3.target=void setX(double)
+comment3.text=\r\n Getters y setters de la clase Punto\r\n
+comment4.params=p_y
+comment4.target=void setY(double)
+comment5.target=double getX()
+comment6.target=double getY()
+comment7.params=p_dx p_dy
+comment7.target=void desplazar(double, double)
+comment7.text=\r\n desplazar(p_x, p_y) recibe dos valores del tipo de valor double, los almacena en varibales \r\n duble (dx y dy) mas el valor actual de las coordenadas X e Y del punto, obtendindolas \r\n mediante los GETTERS, luego esos valores remplazan a los valores de los atributos X e Y del\r\n punto simulando su desplazamiento.\r\n
+comment8.target=void mostrar()
+comment9.target=java.lang.String coordenadas()
+comment9.text=\r\n coordenadas() devuelve los valores X e Y en formato string, que son una abstraccion de las \r\n coordenadas del objeto punto en el plano.\r\n
+numComments=10

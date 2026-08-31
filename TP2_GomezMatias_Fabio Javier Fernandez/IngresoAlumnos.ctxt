@@ -1,0 +1,7 @@
+#BlueJ class context
+#Sun Aug 23 20:30:31 ART 2026
+comment0.target=IngresoAlumnos
+comment0.text=\r\n Write a description of class IngresoAlumnos here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+numComments=2

@@ -1,0 +1,14 @@
+#BlueJ class context
+#Sun Aug 23 20:30:52 ART 2026
+comment0.target=NuevoPunto
+comment0.text=\r\n Write a description of class NuevoPunto here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+comment2.target=void mostrarMenu()
+comment3.params=teclado
+comment3.target=void iniciarPuntoStandar(java.util.Scanner)
+comment3.text=\r\n Instancia el objeto nuevo punto con el constructor sin parametros para que los atributos se \r\n inicialicen con el valor solicitado en la consigna y usa el mismo metodo con un do-while y\r\n un switch para poder crear un menu interactivo basico para un usuario.\r\n
+comment4.params=teclado
+comment4.target=void iniciarPuntoConValores(java.util.Scanner)
+comment4.text=\r\n Instancia el objeto nuevo punto con el constructor y los parametros ingresado por teclado\r\n con la clase Scanner. Los atributos inicializan con el valor solicitado por el usuario \r\n y usa el mismo metodo con un do-while y un switch para poder crear un menu interactivo \r\n basico para un usuario.\r\n
+numComments=5
