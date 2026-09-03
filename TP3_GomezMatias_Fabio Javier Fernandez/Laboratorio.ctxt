@@ -1,7 +1,7 @@
 #BlueJ class context
-#Wed Sep 02 23:52:03 ART 2026
+#Thu Sep 03 10:57:14 ART 2026
 comment0.target=Laboratorio
-comment0.text=\r\n Write a description of class Laboratorio here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment0.text=\r\n Abstraccion del concepto de un laboratorio con sus datos necesarios para su identificacion\r\n y manipulacion junto con otras clases que trabajan en conjunto.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
 comment1.params=p_nombre p_domicilio p_telefono p_compraMin p_diaEnt
 comment1.target=Laboratorio(java.lang.String, java.lang.String, java.lang.String, int, int)
 comment1.text=\r\n Metodo constructor perteneciente a la clase laboratorio, se utiliza dos constructores gracias \r\n a la posibildad de poder sobrecargarlos y diferenciarlos con sus parametros al recibir una \r\n cantidad diferentes a pesar de ser los mismos parametros que se envian.\r\n

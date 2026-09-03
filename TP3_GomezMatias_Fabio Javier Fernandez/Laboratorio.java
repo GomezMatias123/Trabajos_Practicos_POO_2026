@@ -1,6 +1,7 @@
 
 /**
- * Write a description of class Laboratorio here.
+ * Abstraccion del concepto de un laboratorio con sus datos necesarios para su identificacion
+ * y manipulacion junto con otras clases que trabajan en conjunto.
  * 
  * @author (Gomez Matias, Fabio Javier Fernandez) 
  * @version (v1.0)

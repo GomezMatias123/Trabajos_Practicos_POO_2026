@@ -1,0 +1,7 @@
+#BlueJ class context
+#Thu Sep 03 11:27:41 ART 2026
+comment0.target=GestionStock
+comment0.text=\r\n La clase GestionStock nos va a permitir instanciar los objetos necesarios para probar poder\r\n enviar mensajes y probar los metodos. Aqui se encuentra el metodo ejecutable main, como \r\n se\u00F1ala el trabajo se pasara los datos como constantes.\r\n \r\n @author (Fernandez Fabio Javier y Matias Nicolas Gomez) \r\n @version (1.0)\r\n
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+numComments=2

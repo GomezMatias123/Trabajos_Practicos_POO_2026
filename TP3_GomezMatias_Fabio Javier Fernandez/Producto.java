@@ -26,7 +26,8 @@ public class Producto
      * 
      */
     
-    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, double p_porcPtoRepo, int p_existMinima, Laboratorio p_laboratorio) {
+    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, 
+    double p_porcPtoRepo, int p_existMinima, Laboratorio p_laboratorio) {
         
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
@@ -39,7 +40,8 @@ public class Producto
         
     }
     
-    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, Laboratorio p_laboratorio){
+    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, 
+    Laboratorio p_laboratorio){
         
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
@@ -57,7 +59,7 @@ public class Producto
         System.out.println("Descripcion: " + this.getDescripcion());
         System.out.println("Precio Costo: " + this.costo );
         System.out.print("Stock: " + this.stock);
-        System.out.println(" - Stock Valorizado: $" +  this.stockValorizado());
+        System.out.printf(" - Stock Valorizado: $%.2f%n",  this.stockValorizado());
         
     }
     
@@ -78,16 +80,16 @@ public class Producto
     public double precioLista(){
         
         double precioAdicional = 1.12; //se evita el uso de constantes a traves de variables
-        
-        return this.costo * precioAdicional;
+        double resultado = this.costo * precioAdicional;
+        return Math.round(resultado * 100.0)/100.0;
         
     }
     
     public double precioContado() {
         
         double descuento = 0.05;
-        
-        return  this.precioLista() - (this.precioLista() * descuento);
+        double resultado = this.precioLista() - (this.precioLista() * descuento);
+        return  Math.round(resultado * 100.0) / 100.0;
         
     }
     

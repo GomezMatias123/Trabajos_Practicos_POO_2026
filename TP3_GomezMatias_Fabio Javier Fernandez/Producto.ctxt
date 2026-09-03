@@ -1,5 +1,5 @@
 #BlueJ class context
-#Thu Sep 03 01:18:20 ART 2026
+#Thu Sep 03 11:27:41 ART 2026
 comment0.target=Producto
 comment0.text=\r\n La clase producto tiene como funcion modelar los productos de una drogueria,\r\n permite operar los mismos y sus valores, asi como mostrarlos por pantalla.\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n
 comment1.params=p_codigo p_rubro p_desc p_costo p_porcPtoRepo p_existMinima p_laboratorio
