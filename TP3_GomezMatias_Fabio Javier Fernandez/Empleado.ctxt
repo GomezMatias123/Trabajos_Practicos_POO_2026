@@ -1,0 +1,36 @@
+#BlueJ class context
+#Wed Sep 02 23:52:03 ART 2026
+comment0.target=Empleado
+comment0.text=\r\n Write a description of class Empleado here.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
+comment1.params=p_cuil p_apellido p_nombre p_importe p_anio
+comment1.target=Empleado(long, java.lang.String, java.lang.String, double, int)
+comment1.text=\r\n Metodo constructor de la clase Empleado.\r\n
+comment10.target=double getSueldoBasico()
+comment11.target=int getAnioIngreso()
+comment12.target=int antiguedad()
+comment12.text=\r\n Metodo antiguedad() devuelve la cantidad en a\u00F1os mediante una cuenta entre el a\u00F1o que\r\n ingreso el empleado a la empresa y el a\u00F1o en curso.\r\n
+comment13.target=double adicional()
+comment13.text=\r\n Metodos descuento() y adicional() trabajan con el atributo sueldo basico para realizar los \r\n calculos necesarios para llegar al sueldo neto mediante el metodo sueldoNeto().\r\n descuento() realiza el calculo de 2% correspondiente a obra social + 1500 correspondientes \r\n al seguro de vida segun como especifica la consigna para restar al sueldo basico.\r\n adicional() devuelve el porcetnaje extra que se suma al sueldo basico segun la antiguedad \r\n del empleado, que se calcula gracias al metodo antiguedad().\r\n sueldoNeto() simplemente envia un mensajes al objeto empleado para obtener el sueldo \r\n basico, el adicional segun la antiguedad del empleado y el descuento que se resta para\r\n poder obtener el sueldo neto correspondiente segun indica la consigna.\r\n
+comment14.target=double descuento()
+comment15.target=double sueldoNeto()
+comment16.target=java.lang.String nomYApe()
+comment16.text=\r\n Implementacion de los metodos nomYape y apeYnom para la correcta\r\n impresion de los datos solicitados.\r\n
+comment17.target=java.lang.String apeYNom()
+comment18.target=void mostrar()
+comment18.text=\r\n Metodo mostrar() imoprime m\u00E1s en detalle los datos del empleado ya con el suelo neto\r\n impreso, en cambio mostrarLinea() es un metodo que imprime de una forma mas resumida y en \r\n una sola linea la informacion del empleado.\r\n
+comment19.target=java.lang.String mostrarLinea()
+comment2.params=p_cuil
+comment2.target=void setCuil(long)
+comment2.text=\r\n Setter y getter los objetos de la clase Empleado\r\n
+comment3.params=p_apellido
+comment3.target=void setApellido(java.lang.String)
+comment4.params=p_nombre
+comment4.target=void setNombre(java.lang.String)
+comment5.params=p_importe
+comment5.target=void setSueldoBasico(double)
+comment6.params=p_anio
+comment6.target=void setAnioIngreso(int)
+comment7.target=long getCuil()
+comment8.target=java.lang.String getNombre()
+comment9.target=java.lang.String getApellido()
+numComments=20

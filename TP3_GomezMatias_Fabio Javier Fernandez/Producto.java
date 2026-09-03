@@ -1,33 +1,209 @@
 
 /**
- * Write a description of class Producto here.
+ * La clase producto tiene como funcion modelar los productos de una drogueria,
+ * permite operar los mismos y sus valores, asi como mostrarlos por pantalla.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+ * @version 1.0
  */
 public class Producto
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // atributos
+    
+    private int codigo;
+    private String rubro;
+    private String descripcion;
+    private double costo;
+    private int stock;
+    private double porcPtoRepo;
+    private int existMinima;
+    private Laboratorio laboratorio;
 
-    /**
-     * Constructor for objects of class Producto
-     */
-    public Producto()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
+    //metodos
+    /*
+     * Constructor de la clase Producto, se trata de un constructor sobrecargado, dada la
+     * capacidad de posee dos constructores que se diferencian con sus parametros
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, double p_porcPtoRepo, int p_existMinima, Laboratorio p_laboratorio) {
+        
+        this.setCodigo(p_codigo);
+        this.setRubro(p_rubro);
+        this.setDescripcion(p_desc);
+        this.setCosto(p_costo);
+        this.setStock(0);
+        this.setPorcPtoRepo(p_porcPtoRepo);
+        this.setExistMinima(p_existMinima);
+        this.setLaboratorio(p_laboratorio);
+        
+    }
+    
+    public Producto(int p_codigo, String  p_rubro, String p_desc, double p_costo, Laboratorio p_laboratorio){
+        
+        this.setCodigo(p_codigo);
+        this.setRubro(p_rubro);
+        this.setDescripcion(p_desc);
+        this.setCosto(p_costo);
+        this.setStock(0);
+        this.setLaboratorio(p_laboratorio);
+        
+    }
+    
+    public void mostrar() {
+        
+        this.getLaboratorio().mostrar();
+        System.out.println("\nRubro: " + this.getRubro());
+        System.out.println("Descripcion: " + this.getDescripcion());
+        System.out.println("Precio Costo: " + this.costo );
+        System.out.print("Stock: " + this.stock);
+        System.out.println(" - Stock Valorizado: $" +  this.stockValorizado());
+        
+    }
+    
+    public void ajuste( int p_cantidad) {
+        
+        this.setStock(this.getStock() + p_cantidad);
+        
+    }
+    
+    public double stockValorizado() {
+        
+        double rentabilidad = 1.12; //se evita el uso de constantes a traves de variables
+        
+        return (this.stock * this.costo) * rentabilidad;
+        
+    }
+    
+    public double precioLista(){
+        
+        double precioAdicional = 1.12; //se evita el uso de constantes a traves de variables
+        
+        return this.costo * precioAdicional;
+        
+    }
+    
+    public double precioContado() {
+        
+        double descuento = 0.05;
+        
+        return  this.precioLista() - (this.precioLista() * descuento);
+        
+    }
+    
+    public String mostrarLinea() {
+        
+        return this.getDescripcion() + " " + this.precioLista() + " " + this.precioContado();
+        
+    }
+    
+    public void ajustarPtoRepo(double p_porce) {
+        
+        this.setPorcPtoRepo(p_porce);
+        
+    }
+    
+    public void ajustarExistMin(int p_cantidad) {
+        
+        this.setExistMinima(p_cantidad);
+        
+    }
+    
+    private void setCodigo (int p_codigo ) {
+        
+        this.codigo = p_codigo;
+    
+    }
+    
+    private void setRubro (String p_rubro ) {
+        
+        this.rubro = p_rubro;
+    
+    }
+    
+    private void setDescripcion (String p_descripcion  ) {
+        
+        this.descripcion = p_descripcion;
+    
+    }
+    
+    private void setCosto (double p_costo ) {
+        
+        this.costo = p_costo;
+    
+    }
+    
+    private void setStock (int p_stock ) {
+        
+        this.stock = p_stock;
+    
+    }
+    
+    private void setPorcPtoRepo (double p_porcPtoRepo) {
+        
+        this.porcPtoRepo = p_porcPtoRepo;
+    
+    }
+    
+    private void setExistMinima (int p_existMinima ) {
+        
+        this.existMinima = p_existMinima;
+    
+    }
+    
+    private void setLaboratorio (Laboratorio p_laboratorio ) {
+        
+        this.laboratorio = p_laboratorio;
+    
+    }
+    
+    public int getCodigo() {
+        
+        return this.codigo;
+        
+    }
+    
+    public String getDescripcion() {
+        
+        return this.descripcion;
+        
+    }
+    
+    
+    public double getCosto() {
+        
+        return this.costo;
+        
+    }
+    
+    public String getRubro() {
+        
+        return this.rubro;
+        
+    }
+    
+    public int getStock() {
+        
+        return this.stock;
+        
+    }
+    
+    public double getPorcPtoRepo() {
+        
+        return this.porcPtoRepo;
+        
+    }
+    
+    
+    public double getExistMinima() {
+        
+        return this.existMinima;
+        
+    }
+    
+    public Laboratorio getLaboratorio () {
+        
+        return this.laboratorio;
+        
     }
 }
