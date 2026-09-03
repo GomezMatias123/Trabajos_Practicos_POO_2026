@@ -1,9 +1,0 @@
-#BlueJ class context
-#Thu Sep 03 16:18:17 ART 2026
-comment0.target=PanelDibujo
-comment0.text=\r\n Clase creada para probar la clase JPanel de la libreria de java para crear un panel dinamico\r\n para la clase CreadorFiguras.\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n
-comment1.params=circulos
-comment1.target=PanelDibujo(java.util.ArrayList)
-comment2.params=g
-comment2.target=void paintComponent(java.awt.Graphics)
-numComments=3
