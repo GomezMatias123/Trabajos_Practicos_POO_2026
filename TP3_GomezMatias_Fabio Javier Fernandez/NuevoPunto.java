@@ -70,7 +70,7 @@ public class NuevoPunto
     */    
     private static void iniciarPuntoStandar(ArrayList<Punto> p_puntos){
         
-            Punto nuevoPunto = new Punto();
+            Punto nuevoPunto = new Punto();  
              
             p_puntos.add(nuevoPunto);
             
