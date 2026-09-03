@@ -1,0 +1,16 @@
+#BlueJ class context
+#Thu Sep 03 16:18:17 ART 2026
+comment0.target=CreaFigura
+comment0.text=\r\n La clase CrearFigura tiene como funcion poder crear y manipular las diferentes figuras \r\n geometricas que se van instanciando como objetos de sus respectiva clases y poder enviar \r\n los mensajes para llamar a sus respectivos metodos.\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+comment2.target=void mostrarMenu()
+comment3.params=circulos teclado panel
+comment3.target=void desplazarCirculo(java.util.ArrayList, java.util.Scanner, PanelDibujo)
+comment4.params=circulos teclado
+comment4.target=void compararTama\u00F1o(java.util.ArrayList, java.util.Scanner)
+comment5.params=circulos teclado
+comment5.target=void medirDistancia(java.util.ArrayList, java.util.Scanner)
+comment6.params=circulos
+comment6.target=void listaCirculos(java.util.ArrayList)
+numComments=7

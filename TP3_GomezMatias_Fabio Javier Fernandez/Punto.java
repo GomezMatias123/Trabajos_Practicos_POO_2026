@@ -9,14 +9,14 @@ public class Punto {
     private double X;
     private double Y;
     
-    
-    /**
-    * Constructores sobrecargados de la clase Punto
-    */ 
-    public Punto(){
-        X = 0;
-        Y = 0;
-    }
+
+/**
+* Constructores sobrecargados de la clase Punto
+*/ 
+public Punto(){
+    setX(0);
+    setY(0);
+}
 
     public Punto(double p_x, double p_y){
         setX(p_x);
@@ -50,9 +50,9 @@ public class Punto {
      * 
      */
     public double distanciaA(Punto p_ptoDistante) {
-        
-        return Math.sqrt(Math.pow((p_ptoDistante.getX() - this.getX()), 2) 
-                         + Math.pow((p_ptoDistante.getY() - this.getY()), 2)); 
+        double distancia = Math.sqrt(Math.pow((p_ptoDistante.getX() - this.getX()), 2) 
+                         + Math.pow((p_ptoDistante.getY() - this.getY()), 2));
+        return  Math.round(distancia*100.0)/100.0;
                         
     }
     
