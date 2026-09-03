@@ -1,5 +1,9 @@
 #BlueJ class context
+<<<<<<< Updated upstream
 #Thu Sep 03 11:27:41 ART 2026
+=======
+#Thu Sep 03 11:38:03 ART 2026
+>>>>>>> Stashed changes
 comment0.target=Producto
 comment0.text=\r\n La clase producto tiene como funcion modelar los productos de una drogueria,\r\n permite operar los mismos y sus valores, asi como mostrarlos por pantalla.\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n
 comment1.params=p_codigo p_rubro p_desc p_costo p_porcPtoRepo p_existMinima p_laboratorio
@@ -7,8 +11,10 @@ comment1.target=Producto(int, java.lang.String, java.lang.String, double, double
 comment1.text=\r\n Constructor de la clase Producto, se trata de un constructor sobrecargado, dada la\r\n capacidad de posee dos constructores que se diferencian con sus parametros\r\n \r\n
 comment10.params=p_cantidad
 comment10.target=void ajustarExistMin(int)
+comment10.text=\r\n \r\n Permite ajustar el valor de existencia minima\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n param\: recibe el valor al que se quiere actualizar\r\n \r\n
 comment11.params=p_codigo
 comment11.target=void setCodigo(int)
+comment11.text=\r\n \r\n Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n param\: cada setteer recibe como parametro una representacion del atributo correspondiente\r\n \r\n \r\n
 comment12.params=p_rubro
 comment12.target=void setRubro(java.lang.String)
 comment13.params=p_descripcion
@@ -24,6 +30,7 @@ comment17.target=void setExistMinima(int)
 comment18.params=p_laboratorio
 comment18.target=void setLaboratorio(Laboratorio)
 comment19.target=int getCodigo()
+comment19.text=\r\n \r\n los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n return\: retornan su correspondiente atributo\r\n \r\n
 comment2.params=p_codigo p_rubro p_desc p_costo p_laboratorio
 comment2.target=Producto(int, java.lang.String, java.lang.String, double, Laboratorio)
 comment20.target=java.lang.String getDescripcion()
@@ -34,12 +41,19 @@ comment24.target=double getPorcPtoRepo()
 comment25.target=double getExistMinima()
 comment26.target=Laboratorio getLaboratorio()
 comment3.target=void mostrar()
+comment3.text=\r\n \r\n Imprime por pantalla los datos solicitados por el cliente\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n \r\n \r\n
 comment4.params=p_cantidad
 comment4.target=void ajuste(int)
+comment4.text=\r\n \r\n Ajusta la cantidad de stock disponible al sumar o restar la cantidad recibida por parametro.\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n param\: recibe la cantidad a restar o sumar.\r\n \r\n
 comment5.target=double stockValorizado()
+comment5.text=\r\n \r\n Calcula el stock valorizado al multiplicar el stock con el costo y a\u00F1adir una rentabilidad del 12%\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n return\: retorna el valor que representa el stock valorizado \r\n \r\n
 comment6.target=double precioLista()
+comment6.text=\r\n \r\n Calcula el precio de lista al a\u00F1adir una rentabilidad del 12% al costo\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n return\: retorna el valor que representa al precio lista\r\n \r\n
 comment7.target=double precioContado()
+comment7.text=\r\n \r\n Calcula el precio de contado al aplicar un descuento del 5%\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n return\: retorna el valor que representa al precio contado\r\n \r\n
 comment8.target=java.lang.String mostrarLinea()
+comment8.text=\r\n \r\n Retorna un string co el siguiente formato "Jab\u00F3n Deluxe 11.20 10.64"\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n return\: retorna  string con los datos y el formato qe se solicitaron\r\n \r\n
 comment9.params=p_porce
 comment9.target=void ajustarPtoRepo(double)
+comment9.text=\r\n \r\n Permite ajustar el porcentaje de punto de reposicion\r\n \r\n @author Fernandez Fabio Javier y Matias Nicolas Gomez\r\n @version 1.0\r\n param\: recibe el valor al que se quiere actualizar\r\n \r\n
 numComments=27

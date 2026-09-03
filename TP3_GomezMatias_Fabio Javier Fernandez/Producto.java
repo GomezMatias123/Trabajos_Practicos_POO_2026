@@ -52,6 +52,16 @@ public class Producto
         
     }
     
+    /*
+     * 
+     * Imprime por pantalla los datos solicitados por el cliente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * 
+     * 
+     */
+    
     public void mostrar() {
         
         this.getLaboratorio().mostrar();
@@ -63,11 +73,37 @@ public class Producto
         
     }
     
+    
+    
+    
+    
+    /*
+     * 
+     * Ajusta la cantidad de stock disponible al sumar o restar la cantidad recibida por parametro.
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * param: recibe la cantidad a restar o sumar.
+     * 
+     */
+    
     public void ajuste( int p_cantidad) {
         
         this.setStock(this.getStock() + p_cantidad);
         
     }
+    
+    
+    
+    /*
+     * 
+     * Calcula el stock valorizado al multiplicar el stock con el costo y añadir una rentabilidad del 12%
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retorna el valor que representa el stock valorizado 
+     * 
+     */
     
     public double stockValorizado() {
         
@@ -77,6 +113,17 @@ public class Producto
         
     }
     
+    
+    /*
+     * 
+     * Calcula el precio de lista al añadir una rentabilidad del 12% al costo
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retorna el valor que representa al precio lista
+     * 
+     */
+    
     public double precioLista(){
         
         double precioAdicional = 1.12; //se evita el uso de constantes a traves de variables
@@ -84,6 +131,18 @@ public class Producto
         return Math.round(resultado * 100.0)/100.0;
         
     }
+    
+    
+    
+    /*
+     * 
+     * Calcula el precio de contado al aplicar un descuento del 5%
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retorna el valor que representa al precio contado
+     * 
+     */
     
     public double precioContado() {
         
@@ -93,11 +152,33 @@ public class Producto
         
     }
     
+    
+    /*
+     * 
+     * Retorna un string co el siguiente formato "Jabón Deluxe 11.20 10.64"
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retorna  string con los datos y el formato qe se solicitaron
+     * 
+     */
+    
     public String mostrarLinea() {
         
         return this.getDescripcion() + " " + this.precioLista() + " " + this.precioContado();
         
     }
+    
+    
+     /*
+     * 
+     * Permite ajustar el porcentaje de punto de reposicion
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * param: recibe el valor al que se quiere actualizar
+     * 
+     */
     
     public void ajustarPtoRepo(double p_porce) {
         
@@ -105,11 +186,32 @@ public class Producto
         
     }
     
+     /*
+     * 
+     * Permite ajustar el valor de existencia minima
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * param: recibe el valor al que se quiere actualizar
+     * 
+     */
+    
     public void ajustarExistMin(int p_cantidad) {
         
         this.setExistMinima(p_cantidad);
         
     }
+    
+    /*
+     * 
+     * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * param: cada setteer recibe como parametro una representacion del atributo correspondiente
+     * 
+     * 
+     */
     
     private void setCodigo (int p_codigo ) {
         
@@ -158,6 +260,17 @@ public class Producto
         this.laboratorio = p_laboratorio;
     
     }
+    
+    
+    /*
+     * 
+     * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retornan su correspondiente atributo
+     * 
+     */
     
     public int getCodigo() {
         
@@ -208,4 +321,4 @@ public class Producto
         return this.laboratorio;
         
     }
-}
+} 
