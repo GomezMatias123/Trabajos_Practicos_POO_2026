@@ -1,5 +1,5 @@
 #BlueJ class context
-#Thu Sep 03 10:57:14 ART 2026
+#Thu Sep 03 11:42:39 ART 2026
 comment0.target=Laboratorio
 comment0.text=\r\n Abstraccion del concepto de un laboratorio con sus datos necesarios para su identificacion\r\n y manipulacion junto con otras clases que trabajan en conjunto.\r\n \r\n @author (Gomez Matias, Fabio Javier Fernandez) \r\n @version (v1.0)\r\n
 comment1.params=p_nombre p_domicilio p_telefono p_compraMin p_diaEnt
