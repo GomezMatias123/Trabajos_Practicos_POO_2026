@@ -18,6 +18,7 @@ public class CreaFigura
     public static void main(String []args){
         Scanner teclado = new Scanner(System.in);
         ArrayList<Circulo> circulos = new ArrayList<>(); 
+        ArrayList<Rectangulo> rectangulos = new ArrayList<>(); 
         int option = -1;
         
         PanelDibujo panel = new PanelDibujo(circulos);
@@ -59,6 +60,38 @@ public class CreaFigura
                 case 5:
                     medirDistancia(circulos, teclado);
                     break;
+                case 6:
+                    System.out.print("Ingrese el alto: ");
+                    double alto = teclado.nextDouble();
+                    
+                    System.out.print("Ingrese el ancho: ");
+                    double ancho = teclado.nextDouble();
+                    
+                    rectangulos.add(new Rectangulo(ancho, alto));
+                    break;
+                case 7:
+                    System.out.print("Ingrese el alto: ");
+                    alto = teclado.nextDouble();
+                    
+                    System.out.print("Ingrese el ancho: ");
+                    ancho = teclado.nextDouble();
+                    
+                    System.out.print("Ingrese coordenada X del origen: ");
+                    x = teclado.nextDouble();
+                    System.out.print("Ingrese coordenada Y del origen: ");
+                    y = teclado.nextDouble();
+                    
+                    rectangulos.add(new Rectangulo(new Punto(x, y), ancho, alto));
+                    break;
+                case 8: 
+                    desplazarRectangulo(rectangulos, teclado, panel);
+                    break;
+                case 9:
+                    compararRectangulo(rectangulos, teclado);
+                    break;
+                case 10:
+                    distanciaARectangulo(rectangulos, teclado);
+                    break;   
                 case 0:
                     System.out.println("Finalizando el software");
                     break;
@@ -117,6 +150,44 @@ public class CreaFigura
         
     }
     
+     private static void desplazarRectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado, 
+    PanelDibujo panel) {
+        teclado.nextLine();
+        listaRectangulos(rectangulos);
+        int decision = -1;
+        System.out.println("Ingrese el rectangulo que desea trasladar");
+        int indiceRectangulo= teclado.nextInt();
+        Rectangulo rectanguloADesplazar = rectangulos.get(indiceRectangulo- 1);
+        
+        do{
+        System.out.println("1) Deslplazar el circulo por los ejes X e Y");
+        System.out.println("0) Volver al menu principal"); 
+        System.out.println("Coordenadas actuales: " + 
+        rectanguloADesplazar.getOrigen().coordenadas());
+        teclado.nextLine();
+        decision = teclado.nextInt();
+        
+        switch(decision){
+            case 1:
+                teclado.nextLine();
+                System.out.println("Ingrese la cantidad de variacion para el eje X");
+                double x = teclado.nextDouble();
+                System.out.println("Ingrese la cantidad de variacion para el eje Y");
+                double y = teclado.nextDouble();
+                rectanguloADesplazar.getOrigen().desplazar(x, y);
+                panel.repaint();
+                break;
+            case 0:
+                System.out.println("Volviendo al menu...");
+                    break;
+                    default:
+                        System.out.println("Opción inválida.");
+        }
+        }while(decision!= 0);
+        
+    }
+
+    
     private static void compararTamaño(ArrayList<Circulo> circulos, Scanner teclado){
         teclado.nextLine();
         listaCirculos(circulos);
@@ -133,11 +204,47 @@ public class CreaFigura
         circuloA.elMayor(circuloB).caracteristicas(); 
     }
     
+    private static void compararRectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado){
+        teclado.nextLine();
+        listaRectangulos(rectangulos);
+        System.out.println("Ingrese rectangulos a comparar:");
+        System.out.println("rectangulo A: ");
+        int valorRectanguloA= teclado.nextInt();
+        Rectangulo RectanguloA = rectangulos.get(valorRectanguloA- 1);
+        teclado.nextLine();
+        System.out.println("rectangulo b: ");
+        int valorRectanguloB = teclado.nextInt();
+        Rectangulo RectanguloB = rectangulos.get(valorRectanguloB - 1);
+        
+        System.out.println("Circulo mayor: ");
+        RectanguloA.elMayor(RectanguloB).caracteristicas(); 
+    }
+    
+    
+    private static void distanciaARectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado){
+        teclado.nextLine();
+        listaRectangulos(rectangulos);
+        System.out.println("Ingrese los circulos para medir la distancia entre ambos.");
+        System.out.println("rectangulo A: ");
+        int valorRectanguloA = teclado.nextInt();
+        Rectangulo RectanguloA = rectangulos.get(valorRectanguloA - 1);
+        teclado.nextLine();
+        System.out.println("rectangulo B: ");
+        int valorRectanguloB = teclado.nextInt();
+        Rectangulo RectanguloB = rectangulos.get(valorRectanguloB - 1);
+        
+        System.out.println("La distancia es de " + 
+        RectanguloA.getOrigen().distanciaA(RectanguloB.getOrigen()) + " " + "unidades" );
+    
+    
+    
+    }
+    
     
     private static void medirDistancia(ArrayList<Circulo> circulos, Scanner teclado){
-    teclado.nextLine();
-    listaCirculos(circulos);
-    System.out.println("Ingrese los circulos para medir la distancia entre ambos.");
+        teclado.nextLine();
+        listaCirculos(circulos);
+        System.out.println("Ingrese los circulos para medir la distancia entre ambos.");
         System.out.println("Circulo A: ");
         int valorCirculoA = teclado.nextInt();
         Circulo circuloA = circulos.get(valorCirculoA - 1);
@@ -153,20 +260,36 @@ public class CreaFigura
     
     }
     
-    private static void listaCirculos(ArrayList<Circulo> circulos){
-        if(circulos.isEmpty()){
-        System.out.println("--- No se crearon circulos ---");
-        return;
-    } else {
-        System.out.println("-----------------------------------");
-        System.out.println("--- Circulos creados y sus ubicaciones ---");
-        for(int i = 0;i < circulos.size();i++){
-            Circulo circulo = circulos.get(i);
-            System.out.println((i+1) + ") ");
-            circulo.caracteristicas();
+    private static void listaRectangulos(ArrayList<Rectangulo> rectangulos){
+            if(rectangulos.isEmpty()){
+            System.out.println("--- No se crearon circulos ---");
+            return;
+        } else {
+            System.out.println("-----------------------------------");
+            System.out.println("--- Circulos creados y sus ubicaciones ---");
+            for(int i = 0;i < rectangulos.size();i++){
+                Rectangulo rectangulo = rectangulos.get(i);
+                System.out.println((i+1) + ") ");
+                rectangulo.caracteristicas();
+            }
+            System.out.println("-----------------------------------");
         }
-        System.out.println("-----------------------------------");
     }
+    
+    private static void listaCirculos(ArrayList<Circulo> circulos){
+            if(circulos.isEmpty()){
+            System.out.println("--- No se crearon circulos ---");
+            return;
+        } else {
+            System.out.println("-----------------------------------");
+            System.out.println("--- Circulos creados y sus ubicaciones ---");
+            for(int i = 0;i < circulos.size();i++){
+                Circulo circulo = circulos.get(i);
+                System.out.println((i+1) + ") ");
+                circulo.caracteristicas();
+            }
+            System.out.println("-----------------------------------");
+        }
     }
     
     
