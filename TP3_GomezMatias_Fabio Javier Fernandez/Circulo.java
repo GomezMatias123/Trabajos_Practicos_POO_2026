@@ -25,11 +25,11 @@ public class Circulo
         this.setCentro(p_centro);
     }
     
-     public Circulo(){
+    public Circulo(){
         this.setRadio(0);
         this.setCentro(new Punto());
     }
-    
+        
     /*
      * 
      * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente

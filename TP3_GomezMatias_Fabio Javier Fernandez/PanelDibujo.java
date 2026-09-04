@@ -11,9 +11,11 @@ import java.util.ArrayList;
 public class PanelDibujo extends JPanel 
 {
     private ArrayList<Circulo> circulos;
+    private ArrayList<Rectangulo> rectangulos;
 
-    public PanelDibujo(ArrayList<Circulo> circulos) {
+    public PanelDibujo(ArrayList<Circulo> circulos, ArrayList<Rectangulo> rectangulos) {
         this.circulos = circulos;
+        this.rectangulos = rectangulos;
         setBackground(Color.WHITE);
     }
 
@@ -65,6 +67,26 @@ public class PanelDibujo extends JPanel
             
             g2.setColor(Color.BLUE);
             g2.drawOval(px - r, py - r, r * 2, r * 2);
+        }
+        
+        //Rectangulos
+        for (Rectangulo r : rectangulos) {
+            double ox = r.getOrigen().getX();
+            double oy = r.getOrigen().getY();
+            double ancho = r.getAncho();
+            double alto = r.getAlto();
+        
+            int px = origenX + (int) ox;
+            int py = origenY - (int) (oy + alto);
+        
+            // Marca del punto de origen (esquina inferior izquierda)
+            int origenScreenX = origenX + (int) ox;
+            int origenScreenY = origenY - (int) oy;
+            g2.setColor(Color.BLACK);
+            g2.fillOval(origenScreenX - 3, origenScreenY - 3, 6, 6);
+        
+            g2.setColor(Color.RED);
+            g2.drawRect(px, py, (int) ancho, (int) alto);
         }
     }
 }
