@@ -16,10 +16,24 @@ import java.awt.*;
 public class CreaFigura
 {
     public static void main(String []args){
+        /**
+         * Instancia del objeto de la clase Scanner, los array list para tener una lista dinamica una especificamente para los objetos de clase Circulo y otro para los objetos
+         * de clase Rectangulo.
+         */
             Scanner teclado = new Scanner(System.in);
             ArrayList<Circulo> circulos = new ArrayList<>(); 
             ArrayList<Rectangulo> rectangulos = new ArrayList<>(); 
             int option = -1;
+           
+        /**
+         * Se instancia un objeto de la clase PanelDibujo donde se pasa todo lo necesario para dibujar la interfaz grafica de los ejez cartesianos y las figuras geometricas
+         * 
+         * param: recibe como parametro los arrays de circulos y rectangulos.
+         * 
+         * El objeto frame de la clase JFrame es de la libreria java.swing que nos permite crear la ventana donde dibujar las figuras geometricas
+         * recibe como parametro el titulo de la ventana.
+         * 
+         */
             
             PanelDibujo panel = new PanelDibujo(circulos, rectangulos);
             JFrame frame = new JFrame("Figuras Geométricas");
@@ -102,7 +116,14 @@ public class CreaFigura
                         }
             }while(option != 0);
     }
-    
+       
+        /**
+         * Imprime un menu para brindar las indicaciones al usuario para que pueda moverse a travez de las opciones del programa-
+         * 
+         * param: ----
+         * return: ----
+         * 
+         */
     
      private static void mostrarMenu(){
         System.out.println("--- Creador de figuras geometricas ---");
@@ -120,6 +141,15 @@ public class CreaFigura
         System.out.print("Ingrese opción: ");
     }
     
+        /**
+         * Permite desplazar el circulo trasladando su punto o centro entre las coordenadas de los ejes cartesianso.
+         * 
+         * param: Recibe como parametros el conjunto de todos los circulos creados, el objeto teclado del tipo scanner que nos permite movernos por el menu de opciones
+         * y el objeto panel que nos ayuda a redibujar la figura despues que se traslada a otro punto del plano.
+         * return: void.
+         * 
+         * 
+         */
     private static void desplazarCirculo(ArrayList<Circulo> circulos, Scanner teclado, PanelDibujo panel) {
          if(!listaCirculos(circulos)){
             return;
@@ -158,6 +188,15 @@ public class CreaFigura
         }
     }      
     
+    /**
+         * Permite desplazar el rectangulo trasladando su punto o esquina inferior izquierda entre las coordenadas de los ejes cartesianso.
+         * 
+         * param: Recibe como parametros el conjunto de todos los rectangulos creados, el objeto teclado del tipo scanner para movernos por el menu 
+         * y el objeto panel que nos ayuda a redibujar la figura despues que se traslada a otro punto del plano.
+         * return: void.
+         * 
+         * 
+         */
      private static void desplazarRectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado, PanelDibujo panel) 
      {
         if(!listaRectangulos(rectangulos)){
@@ -198,7 +237,16 @@ public class CreaFigura
             
             }
     }
-
+    
+    
+        /**
+         * Compara el tamaño de dos circulos creados en base a su superficie, el de mayor superficie se imprime un mensaje con sus radio y sus demas datos.
+         * 
+         * param: Recibe como parametros el conjunto de todos los circulos creados y el objeto teclado del tipo scanner para movernos por el menu.
+         * return: void.
+         * 
+         * 
+         */
     
         private static void compararTamaño(ArrayList<Circulo> circulos, Scanner teclado){
              if(!listaCirculos(circulos)){
@@ -220,6 +268,15 @@ public class CreaFigura
         }
     }
     
+    
+        /**
+         * Compara el tamaño de dos rectangulos creados en base a su superficie, el de mayor superficie se imprime un mensaje con datos.
+         * 
+         * param: Recibe como parametros el conjunto de todos los rectangulos creados y el objeto teclado del tipo scanner para movernos por el menu.
+         * return: void.
+         * 
+         * 
+         */
     private static void compararRectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado){
         if(!listaRectangulos(rectangulos)){
             return;
@@ -240,6 +297,14 @@ public class CreaFigura
         }
     }   
     
+        /**
+         * Mide la distancia entre dos rectangulos.
+         * 
+         * param: Recibe como parametros el conjunto de todos los rectangulos creados y el objeto teclado del tipo scanner para movernos por el menu.
+         * return: void.
+         * 
+         * 
+         */
     
     private static void distanciaARectangulo(ArrayList<Rectangulo> rectangulos, Scanner teclado){
         if(!listaRectangulos(rectangulos)){
@@ -260,6 +325,15 @@ public class CreaFigura
         }
     }
     
+    
+        /**
+         * Mide la distancia entre dos circulos.
+         * 
+         * param: Recibe como parametros el conjunto de todos circulos creados y el objeto teclado del tipo scanner para movernos por el menu.
+         * return: void.
+         * 
+         * 
+         */
     
         private static void medirDistancia(ArrayList<Circulo> circulos, Scanner teclado){
             if(!listaCirculos(circulos)){
@@ -283,6 +357,15 @@ public class CreaFigura
         }
     }
     
+    
+        /**
+         * En lista todos los rectangulos creados mediante la iteracion hecha con un for, caso contrario imprime que no se crearon figuras en esta lista.
+         * 
+         * param: Recibe como parametros el conjunto de todos rectangulos creados.
+         * return: void.
+         * 
+         * 
+         */
     private static boolean listaRectangulos(ArrayList<Rectangulo> rectangulos){
             if(rectangulos.isEmpty()){
             System.out.println("--- No se crearon rectangulos ---");
@@ -299,7 +382,15 @@ public class CreaFigura
             return true;
         }
     }
-    
+        
+        /**
+         * En lista todos los circulos creados mediante la iteracion hecha con un for, caso contrario imprime que no se crearon figuras en esta lista.
+         * 
+         * param: Recibe como parametros el conjunto de todos circulos creados.
+         * return: void.
+         * 
+         * 
+         */
     private static boolean listaCirculos(ArrayList<Circulo> circulos){
             if(circulos.isEmpty()){
             System.out.println("--- No se crearon circulos ---");
@@ -316,6 +407,5 @@ public class CreaFigura
             return true;
         }
     }
-    
     
  }
