@@ -17,6 +17,12 @@ public class Rectangulo
     private double ancho;
     private double alto;
     
+    //metodos
+    
+    /*
+     * Constructores de la clase Rectangulo, se trata de un constructor sobrecargado, dada la
+     * capacidad de posee dos constructores que se diferencian con sus parametros
+     */
 
     public Rectangulo(Punto p_origen, double p_ancho, double p_alto) {
         
@@ -34,11 +40,28 @@ public class Rectangulo
         
     }
     
+    /*
+     * Usa las coordenadas x e y del orige para desplazar el rectangulo
+     * 
+     * param: recibe como parametro las coordenadas 
+     * 
+     */
+    
     public void desplazar(double p_dx, double p_dy){
         
         this.getOrigen().desplazar(p_dx, p_dy);
         
     }
+    
+    /*
+     * 
+     * Imprime por pantalla los datos solicitados por el cliente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * 
+     * 
+     */
     
     public void caracteristicas(){
         
@@ -50,21 +73,57 @@ public class Rectangulo
         
     }
     
+    /*
+     * Calcula el perimetro de un Rectangulo y retorna dicho valor
+     * 
+     * return: retorna el valor que representa el perimetro.
+     * 
+     * 
+     */
+    
+    
     public double perimetro(){
         
         return (this.getAncho() * 2) + (this.getAlto() * 2);
         
     }
     
+    /*
+     * Calcula el superficie de un Rectangulo y retorna dicho valor
+     * 
+     * return: retorna el valor que representa el superficie.
+     * 
+     * 
+     */
+    
     public double superficie() {
         
         return this.getAncho() * this.getAlto();
     }
     
+    /*
+     * Calcula la distancia entre dos Rectangulos y retorna dicho valor
+     * 
+     * param: recibe como parametro un Rectangulos con el cual se calculara la distancia
+     * return: retorna el valor que representa la distancia entre los dos puntos.
+     * 
+     * 
+     */
+    
     public double distanciaA(Rectangulo otroRectangulo) {
         
         return this.getOrigen().distanciaA(otroRectangulo.getOrigen());
     }
+    
+    /*
+     * Obtiene el mayor entre dos Rectangulos y retorna dicho rectangulo
+     * 
+     * param: recibe como parametro un Rectangulos
+     * return: retorna el rectangulo con una superficie mayor a otro.
+     * 
+     * 
+     */
+    
     
     public Rectangulo elMayor(Rectangulo otroRectangulo){
         if(otroRectangulo.superficie() > this.superficie()){
@@ -77,6 +136,17 @@ public class Rectangulo
             return this;
         }
     }
+    
+     /*
+     * 
+     * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * param: cada setteer recibe como parametro una representacion del atributo correspondiente
+     * 
+     * 
+     */
     
     
     private void setOrigen(Punto p_origen){
@@ -96,6 +166,16 @@ public class Rectangulo
         this.alto = p_alto;
         
     }
+    
+    /*
+     * 
+     * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * return: retornan su correspondiente atributo
+     * 
+     */
     
     
     

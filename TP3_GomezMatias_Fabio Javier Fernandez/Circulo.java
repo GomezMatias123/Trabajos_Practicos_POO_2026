@@ -69,19 +69,51 @@ public class Circulo
     }
     
     
+    /*
+     * Usa las coordenadas x e y del orige para desplazar el Circulo
+     * 
+     * param: recibe como parametro las coordenadas
+     * 
+     */
+    
     public void desplazar(double p_x, double p_y){
         this.centro.desplazar(p_x, p_y);        
     }
+    
+    /*
+     * Calcula el perimetro de un Circulo y retorna dicho valor
+     * 
+     * return: retorna el valor que representa el perimetro.
+     * 
+     * 
+     */
     
     public double perimetro(){
         double perimetro = this.getRadio()*2* Math.PI;
         return Math.round(perimetro*100.0)/100.0;
     }
     
+    /*
+     * Calcula el superficie de un Circulo y retorna dicho valor
+     * 
+     * return: retorna el valor que representa el superficie.
+     * 
+     * 
+     */
+    
     public double superficie(){
         double superficie = Math.PI * Math.pow(this.getRadio(), 2);
         return Math.round(superficie*100.0)/100.0;
     }
+    
+    /*
+     * Obtiene el mayor entre dos Circulos y retorna dicho Circulo
+     * 
+     * param: recibe como parametro un Circulos
+     * return: retorna el Circulo con una superficie mayor a otro.
+     * 
+     * 
+     */
     
     public Circulo elMayor(Circulo otroCirculo){
         if(otroCirculo.superficie() > this.superficie()){
@@ -94,6 +126,16 @@ public class Circulo
             return this;
         }
     }
+    
+    /*
+     * 
+     * Imprime por pantalla los datos solicitados por el cliente
+     * 
+     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
+     * @version 1.0
+     * 
+     * 
+     */
     
     public void caracteristicas(){
         System.out.println("*****Circulo*****");
