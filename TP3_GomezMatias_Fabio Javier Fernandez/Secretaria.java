@@ -47,15 +47,15 @@ public class Secretaria
         
         
         
-        System.out.println("1) Emitir un recibo d un docente"); 
+        System.out.println("1) Emitir un recibo de un docente"); 
         System.out.println("0) Finalizar");
         
         
     }
     
     public static Escuela ingresarEscuela(Scanner teclado) {
-        
-        System.out.println("nombre: ");
+        teclado.nextLine();
+        System.out.println("nombre del colegio: ");
         String nombre = teclado.nextLine();
         
         System.out.println("domicilio: ");
@@ -72,7 +72,7 @@ public class Secretaria
     
     public static Docente ingresarDocente(Scanner teclado) {
     
-        System.out.println("Ingrese Nombre: ");
+        System.out.println("Ingrese Nombre del docente: ");
         String nombre = teclado.nextLine();
         
         System.out.println("grado: ");
