@@ -9,56 +9,73 @@ import java.util.GregorianCalendar;
  */
 public class Persona
 {
-Calendar fechaHoy = new GregorianCalendar();
-int anioHoy = fechaHoy.get(Calendar.YEAR);
+    Calendar fechaHoy = new GregorianCalendar();
+    int anioHoy = fechaHoy.get(Calendar.YEAR);
    
     private int nroDni;
     private String nombre;
     private String apellido;
-    private int anioNacimiento;
-/**
- * Constructor que establece los valores de los atributos (nroDni, nombre, apellido y
- * anioNacimiento) de los objetos instanciados en la clase "persona".
- * 
- */
-    public Persona(int p_dni, String p_nombre, String p_apellido, int p_anio){
+    private Calendar fechaNacimiento;
+    /**
+     * Constructor que establece los valores de los atributos (nroDni, nombre, apellido y
+     * anioNacimiento) de los objetos instanciados en la clase "persona".
+     * 
+     */
+        public Persona(int p_dni, String p_nombre, String p_apellido, int p_anio){
+            this.setDNI(p_dni);
+            this.setNombre(p_nombre);
+            this.setApellido(p_apellido);
+            this.setAnioNacimiento(p_anio);
+        }
+    
+        public Persona(int p_dni, String p_nombre, String p_apellido, Calendar p_fecha){
         this.setDNI(p_dni);
         this.setNombre(p_nombre);
         this.setApellido(p_apellido);
-        this.setAnioNacimiento(p_anio);
+        this.setFechaNacimiento(p_fecha);
     }
     
     private void setDNI(int p_dni){
-         nroDni = p_dni;
+         this.nroDni = p_dni;
      }
      
     private void setNombre(String p_nombre){
-        nombre = p_nombre;
+        this.nombre = p_nombre;
     }
     
     private void setApellido(String p_apellido){
-        apellido = p_apellido;
+        this.apellido = p_apellido;
     }
     
     private void setAnioNacimiento(int p_anio){
-        anioNacimiento = p_anio;
+        Calendar fecha = new GregorianCalendar();
+        fecha.set(Calendar.YEAR, p_anio);
+        this.fechaNacimiento = fecha;
+    }
+    
+    private void setFechaNacimiento(Calendar p_fecha){
+        this.fechaNacimiento = p_fecha;
     }
     
     public int getDNI(){
-        return nroDni;
+        return this.nroDni;
     }
     
     public String getNombre(){
-        return nombre;
+        return this.nombre;
     }
     
     public String getApellido(){
-        return apellido;
+        return this.apellido;
     }
     
     public int getAnioNacimiento(){
-        return anioNacimiento;
+        return this.fechaNacimiento.get(Calendar.YEAR);
     }
+    
+    public Calendar getFechaNacimiento(){
+        return this.fechaNacimiento;
+        }
     
     /**
      * Implementacion de los metodos edad y mostrar, junto con nomYape y apeYnom para la correcta
@@ -67,12 +84,12 @@ int anioHoy = fechaHoy.get(Calendar.YEAR);
      
     public int edad(){
         return anioHoy - getAnioNacimiento();
-    }
+        }
 
     public String nomYApe(){
         return getNombre() + "," + " " + getApellido();
         
-    }
+        }
     
      public String apeYNom(){
         return getApellido() + "," + getNombre();
@@ -84,4 +101,14 @@ int anioHoy = fechaHoy.get(Calendar.YEAR);
         System.out.println("DNI: " +  getDNI() + " " + "Edad: " + edad() + " " + "años");
     }
     
+    public boolean esCumpleaños(){
+        Calendar fechaHoy = new GregorianCalendar();
+  
+        if(fechaHoy.get(Calendar.DAY_OF_MONTH) == getFechaNacimiento().get(Calendar.DAY_OF_MONTH) 
+        && fechaHoy.get(Calendar.MONTH) == getFechaNacimiento().get(Calendar.MONTH)){
+                return true;
+                } else {
+                return false;
+            }
+        }
 }

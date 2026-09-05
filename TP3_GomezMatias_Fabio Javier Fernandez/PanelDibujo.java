@@ -46,7 +46,7 @@ public class PanelDibujo extends JPanel
         // Marcas en el eje Y
         for (int j = -origenY; j < altoPanel - origenY; j += intervalo) {
             if (j == 0) continue;
-            int y = origenY - j; // se invierte porque Y crece hacia arriba
+            int y = origenY - j; 
             g2.drawLine(origenX - 3, y, origenX + 3, y);
             g2.drawString(String.valueOf(j), origenX + 6, y + 4);
         }
@@ -55,10 +55,10 @@ public class PanelDibujo extends JPanel
         g2.drawString("0", origenX + 6, origenY + 15);
         
         // Círculos
-        g2.setColor(Color.BLUE);
-        for (Circulo c : circulos) {
+        for (int i = 0; i < circulos.size(); i++) {
+            Circulo c = circulos.get(i);
             int px = origenX + (int) c.getCentro().getX();
-            int py = origenY - (int) c.getCentro().getY(); // Y se invierte
+            int py = origenY - (int) c.getCentro().getY(); 
             int r = (int) c.getRadio();
             
             g2.setColor(Color.BLACK);
@@ -70,7 +70,9 @@ public class PanelDibujo extends JPanel
         }
         
         //Rectangulos
-        for (Rectangulo r : rectangulos) {
+        for (int i = 0; i < rectangulos.size(); i++) {
+            Rectangulo r = rectangulos.get(i);
+            
             double ox = r.getOrigen().getX();
             double oy = r.getOrigen().getY();
             double ancho = r.getAncho();
@@ -79,7 +81,6 @@ public class PanelDibujo extends JPanel
             int px = origenX + (int) ox;
             int py = origenY - (int) (oy + alto);
         
-            // Marca del punto de origen (esquina inferior izquierda)
             int origenScreenX = origenX + (int) ox;
             int origenScreenY = origenY - (int) oy;
             g2.setColor(Color.BLACK);
