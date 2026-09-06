@@ -20,7 +20,7 @@ public class Docente {
     
     /**
      * 
-    * Metodo constructor perteneciente a la clase laboratorio.
+    * Metodo constructor perteneciente a la clase docente.
     * 
     */
    

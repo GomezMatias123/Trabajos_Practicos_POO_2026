@@ -1,8 +1,6 @@
 import java.util.Scanner;
 /**
- *  La clase GestionStock nos va a permitir instanciar los objetos necesarios para probar poder
- * enviar mensajes y probar los metodos. Aqui se encuentra el metodo ejecutable main, como 
- * señala el trabajo se ingrsaran datos a traves del teclado del usuario.
+ *  La clase Secretaria nos permite simular la impresion de un recibo de unn docente.
  * 
  * @author (Fernandez Fabio Javier y Matias Nicolas Gomez) 
  * @version (1.0)
@@ -40,6 +38,14 @@ public class Secretaria
         
         
     }
+    
+    /*
+     * 
+     * 
+     * Es un menu con las opciones displonibles
+     * 
+     * 
+     */
         
     public static void menu() {
         
@@ -52,6 +58,13 @@ public class Secretaria
         
         
     }
+    
+    /*
+     * 
+     * 
+     * retorna un objeto de la clase escuela luego de instanciarlo
+     * 
+     */
     
     public static Escuela ingresarEscuela(Scanner teclado) {
         teclado.nextLine();
@@ -69,6 +82,14 @@ public class Secretaria
         
         return nuevaEscuela;
     }
+    
+    /*
+     * 
+     * 
+     * retorna un objeto de la clase docente luego de instanciarlo
+     * 
+     * 
+     */
     
     public static Docente ingresarDocente(Scanner teclado) {
     
