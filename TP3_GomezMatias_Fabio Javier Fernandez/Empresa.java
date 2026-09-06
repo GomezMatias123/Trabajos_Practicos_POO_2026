@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.*;
 import java.util.Scanner;
 /**
- * Write a description of class Empresa here.
+ * Abstracion de una empresa con la Clase Empleado que a su vez contiene el metodo ejecutable para poder 
+ * manejar y registrar los datos de los empleados.
  * 
  * @author (Gomez Matias, Fabio Javier Fernandez) 
  * @version (v1.0)
@@ -47,6 +48,7 @@ public class Empresa {
                     break;
                 case 5:
                     permisoEmpleado(teclado, empleados);
+                    break;
                 case 0:
                     System.out.println("Finalizando el software");
                     break;
@@ -72,6 +74,7 @@ public class Empresa {
             System.out.println("2) Mostrar lista de empleados");
             System.out.println("3) Mostrar Linea");
             System.out.println("4) Mostrar empleado en detalle");
+            System.out.println("5) ¿Tiene permiso de salir temprano?");
             System.out.println("0) Salir");
             System.out.print("Ingrese opción: ");
         }
@@ -116,7 +119,16 @@ public class Empresa {
             System.out.println("anio de ingreso: ");
             fecha.set(Calendar.YEAR, teclado.nextInt());
             
-            Empleado nuevoEmpleado = new Empleado(cuil, apellido, nombre, sueldo, fecha);
+            System.out.println("¿Tiene jefe? ingrese el indice de la lista correrspondiente del jefe (0 en caso que no posea un superior):");
+            mostrarEmpleados(empleados);
+            int indiceJefe = teclado.nextInt();
+            teclado.nextLine();
+            
+            Empleado jefe = null;
+            if(indiceJefe != 0){
+                jefe = empleados.get(indiceJefe -1);
+            }
+            Empleado nuevoEmpleado = new Empleado(cuil, apellido, nombre, sueldo, fecha, jefe);
             empleados.add(nuevoEmpleado);
             System.out.println("Empleado agregado correctamente.");
         }
@@ -201,24 +213,26 @@ public class Empresa {
         }
     }
     
-    private static void permisoEmpleado(Scanner teclado, ArrayList<Empleado> empleados){
-        teclado.nextLine();
-        if(empleados.isEmpty()){
-            System.out.println("--- Lista vacia ---");
-            return;
-        } else {
-            System.out.println("Ingrese numero de indice del empleado: ");
-            int indiceEmpleado = teclado.nextInt();
-              Empleado empleado = empleados.get(indiceEmpleado - 1);
-              if(empleado.esAniversario()) {
-                  System.out.println("-----------------------------------");
-                  System.out.println(indiceEmpleado + ")");
-                  empleado.mostrar();
-                  System.out.println("Este dia es tu aniversario! Puedes salir temprano.");
-                  System.out.println("-----------------------------------");
-                  
-              }
+        private static void permisoEmpleado(Scanner teclado, ArrayList<Empleado> empleados){
+            teclado.nextLine();
+            if(empleados.isEmpty()){
+                System.out.println("--- Lista vacia ---");
+                return;
+            } else {
+                System.out.println("Ingrese numero de indice del empleado: ");
+                int indiceEmpleado = teclado.nextInt();
+                  Empleado empleado = empleados.get(indiceEmpleado - 1);
+                  if(empleado.esAniversario()) {
+                      System.out.println("-----------------------------------");
+                      System.out.println(indiceEmpleado + ")");
+                      empleado.mostrar();
+                      System.out.println("Este dia es tu aniversario! Puedes salir temprano.");
+                      System.out.println("-----------------------------------");
+                      System.out.println("Firma: " + empleado.getJefe().apeYNom() + " " + 
+                      "-Cuil: " + empleado.getJefe().getCuil());
+                  } else {
+                  System.out.println("Todavia no es tu aniversario de ingreso.");
+            }
         }
-    }
-        
+    }  
     }
