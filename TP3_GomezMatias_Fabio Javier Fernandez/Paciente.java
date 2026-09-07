@@ -89,7 +89,7 @@ public class Paciente
     }
      
     
-    /**
+        /**
          * Imprime en el formato lineal solicitado la informacion del paciente y su localidad donde vive
          * 
          * param: ----

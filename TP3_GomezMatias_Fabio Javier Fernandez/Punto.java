@@ -41,7 +41,7 @@ public Punto(){
     }
     
     
-    /*
+    /**
      * Calcula la distancia entre dos puntos y retorna dicho valor
      * 
      * param: recibe como parametro un Punto con el cual se calculara la distancia

@@ -12,7 +12,16 @@ public class CuentaCorriente
     private double limiteDescubierto;
     private Persona titular;
  
-    // Constructor sin saldo 
+    /**
+     * Constructor sobre cargado para la clase Cuenta Corriente permite realizar instancias de un objeto con saldo o sin saldo
+     * 
+     * param: datos del mismo tipo que los atributos del objeto.
+     * 
+     * 
+     */
+    
+    
+    
     public CuentaCorriente(int p_nroCuenta, Persona p_titular) {
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
@@ -20,7 +29,7 @@ public class CuentaCorriente
         this.setLimiteDescubierto(500);
     }
  
-    // Constructor con saldo inicial
+    
     public CuentaCorriente(int p_nroCuenta, Persona p_titular, double p_saldo) {
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
@@ -28,7 +37,10 @@ public class CuentaCorriente
         this.setLimiteDescubierto(500);
     }
  
-    // Getters y Setters
+    /**
+     * Getter y Setters
+     * 
+     */
     public int getNroCuenta() {
         
         return this.nroCuenta;
@@ -65,13 +77,25 @@ public class CuentaCorriente
         this.limiteDescubierto = p_limite;
     }
  
-    // Sólo suma el importe al saldo
+    /**
+     * Modifica el atributo de saldo de un objeto Cuenta Corriente mediante una variable del tipo double ingresada por el usuario.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * 
+     * 
+     */
     public void depositar(double p_importe) {
         double deposito = p_importe + this.getSaldo();
         this.setSaldo(deposito);
     }
  
-    // Devuelve true si el importe no supera saldo + descubierto
+    /**
+     * Define si la extraccion de dinero solicitada por el usuario es valida o posible.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * return: un valor booleano correspondiente a si es posible hacer determinada accion o no.
+     * 
+     */
     public boolean puedeExtraer(double p_importe) {
         double extraccion = p_importe;
         if(extraccion <= (this.getSaldo() + this.getLimiteDescubierto())){
@@ -80,14 +104,23 @@ public class CuentaCorriente
         return false;
         }
     }
-    // Realizala extracción
+    /**
+     * Realiza la extraccion de dinero solicitada por el usuario cuando es valida.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado. 
+     * 
+     */
     private void extraccion(double p_importe) {
         double extraccion = this.getSaldo() - p_importe;
         this.setSaldo(extraccion);
     }
- 
-    // Coordina la extracción: llama a puedeExtraer(), y según el resultado
-    // ejecuta extraccion() o informa el motivo por el cual no se pudo extraer
+    
+     /**
+     * Inicia el proceso para ver si es posible la extraccion, caso contrario imprime un mensaje que especifica lo contrario
+     * 
+     * param: Un atributo de tipo double ingresado por teclado. 
+     * 
+     */
     public void extraer(double p_importe) {
         if(!puedeExtraer(p_importe)){
             System.out.println("El importe de extraccion sobrepasa el límite de descubierto!");
@@ -96,6 +129,11 @@ public class CuentaCorriente
         }
     }
     
+    /**
+     * Imprime los datos de la cuenta.
+     * 
+     * 
+     */
     public void mostrar() {
         System.out.println("-Cuenta Corriente -");
         System.out.println("Nro.Cuenta: " + this.getNroCuenta() + " " + "-" + " " + "Saldo: " 

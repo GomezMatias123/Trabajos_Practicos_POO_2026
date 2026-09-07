@@ -53,7 +53,7 @@ public class Localidad
          * 
          */
     public String mostrar() {
-        // TODO: retornar "Localidad: <nombre> Provincia: <provincia>"
+        
         return "Localidad: " + this.getNombre() + " " + "Provincia: " + this.getProvincia();
     }
 

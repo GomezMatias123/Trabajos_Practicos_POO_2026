@@ -39,7 +39,7 @@ public class Secretaria
         
     }
     
-    /*
+    /**
      * 
      * 
      * Es un menu con las opciones displonibles
@@ -59,7 +59,7 @@ public class Secretaria
         
     }
     
-    /*
+    /**
      * 
      * 
      * retorna un objeto de la clase escuela luego de instanciarlo
@@ -83,7 +83,7 @@ public class Secretaria
         return nuevaEscuela;
     }
     
-    /*
+    /**
      * 
      * 
      * retorna un objeto de la clase docente luego de instanciarlo

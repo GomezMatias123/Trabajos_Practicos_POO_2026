@@ -10,12 +10,12 @@
 public class Circulo
 {
     
-    // atributos
+   
    private double radio;
    private Punto centro;
     
    
-   /*
+       /**
      * Constructores de la clase Circulo, se trata de un constructor sobrecargado, dada la
      * capacidad de posee dos constructores que se diferencian con sus parametros
      */
@@ -30,7 +30,7 @@ public class Circulo
         this.setCentro(new Punto());
     }
         
-    /*
+    /**
      * 
      * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
      * 
@@ -50,7 +50,7 @@ public class Circulo
     }
     
     
-    /*
+    /**
      * 
      * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
      * 
@@ -69,7 +69,7 @@ public class Circulo
     }
     
     
-    /*
+    /**
      * Usa las coordenadas x e y del orige para desplazar el Circulo
      * 
      * param: recibe como parametro las coordenadas
@@ -80,7 +80,7 @@ public class Circulo
         this.centro.desplazar(p_x, p_y);        
     }
     
-    /*
+    /**
      * Calcula el perimetro de un Circulo y retorna dicho valor
      * 
      * return: retorna el valor que representa el perimetro.
@@ -93,7 +93,7 @@ public class Circulo
         return Math.round(perimetro*100.0)/100.0;
     }
     
-    /*
+    /**
      * Calcula el superficie de un Circulo y retorna dicho valor
      * 
      * return: retorna el valor que representa el superficie.
@@ -106,7 +106,7 @@ public class Circulo
         return Math.round(superficie*100.0)/100.0;
     }
     
-    /*
+    /**
      * Obtiene el mayor entre dos Circulos y retorna dicho Circulo
      * 
      * param: recibe como parametro un Circulos
@@ -127,7 +127,7 @@ public class Circulo
         }
     }
     
-    /*
+    /**
      * 
      * Imprime por pantalla los datos solicitados por el cliente
      * 

@@ -11,15 +11,15 @@
 
 public class Rectangulo
 {
-    //atributos
+    
     
     private Punto origen;
     private double ancho;
     private double alto;
     
-    //metodos
     
-    /*
+    
+    /**
      * Constructores de la clase Rectangulo, se trata de un constructor sobrecargado, dada la
      * capacidad de posee dos constructores que se diferencian con sus parametros
      */
@@ -40,7 +40,7 @@ public class Rectangulo
         
     }
     
-    /*
+    /**
      * Usa las coordenadas x e y del orige para desplazar el rectangulo
      * 
      * param: recibe como parametro las coordenadas 
@@ -53,13 +53,9 @@ public class Rectangulo
         
     }
     
-    /*
+    /**
      * 
      * Imprime por pantalla los datos solicitados por el cliente
-     * 
-     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
-     * @version 1.0
-     * 
      * 
      */
     
@@ -73,7 +69,7 @@ public class Rectangulo
         
     }
     
-    /*
+    /**
      * Calcula el perimetro de un Rectangulo y retorna dicho valor
      * 
      * return: retorna el valor que representa el perimetro.
@@ -88,7 +84,7 @@ public class Rectangulo
         
     }
     
-    /*
+    /**
      * Calcula el superficie de un Rectangulo y retorna dicho valor
      * 
      * return: retorna el valor que representa el superficie.
@@ -101,7 +97,7 @@ public class Rectangulo
         return this.getAncho() * this.getAlto();
     }
     
-    /*
+    /**
      * Calcula la distancia entre dos Rectangulos y retorna dicho valor
      * 
      * param: recibe como parametro un Rectangulos con el cual se calculara la distancia
@@ -115,7 +111,7 @@ public class Rectangulo
         return this.getOrigen().distanciaA(otroRectangulo.getOrigen());
     }
     
-    /*
+    /**
      * Obtiene el mayor entre dos Rectangulos y retorna dicho rectangulo
      * 
      * param: recibe como parametro un Rectangulos
@@ -137,12 +133,10 @@ public class Rectangulo
         }
     }
     
-     /*
+     /**
      * 
      * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
      * 
-     * @author Fernandez Fabio Javier y Matias Nicolas Gomez
-     * @version 1.0
      * param: cada setteer recibe como parametro una representacion del atributo correspondiente
      * 
      * 
@@ -167,7 +161,7 @@ public class Rectangulo
         
     }
     
-    /*
+    /**
      * 
      * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
      * 

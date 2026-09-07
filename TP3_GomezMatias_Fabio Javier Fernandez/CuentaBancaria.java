@@ -7,11 +7,18 @@
  */
 public class CuentaBancaria
 {
-    // Atributos
+    
     private int nroCuenta;
     private double saldo;
     private Persona titular;
  
+    /**
+     * Constructores sobrecargadso, permiten realizar instancias de un objeto con saldo o sin saldo
+     * 
+     * param: datos del mismo tipo que los atributos del objeto.
+     * 
+     * 
+     */
     
     public CuentaBancaria(int p_nroCuenta, Persona p_titular) {
         this.setNroCuenta(p_nroCuenta);
@@ -26,7 +33,9 @@ public class CuentaBancaria
         this.setSaldo(p_saldo);
     }
  
-    // Getters y Setters
+    /**
+     *Getters y Setters
+     */
     public int getNroCuenta() {
         return this.nroCuenta;
     }
@@ -51,13 +60,27 @@ public class CuentaBancaria
         this.titular = titular;
     }   
  
-    // Métodos del diagrama
+    /**
+     * Modifica el atributo de saldo de un objeto CuentaBancaria mediante una variable del tipo double ingresada por el usuario.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * return: El valor del deposito que es la suma del saldo en el momento de la ejecucion del metodo más el valor double recibido por parametro.
+     * 
+     */
     public double depositar(double p_importe) {
         double deposito = this.getSaldo() + p_importe;
         this.setSaldo(deposito);
         return deposito;
     }
  
+    
+    /**
+     * Define si la extraccion de dinero solicitada por el usuario es valida o posible.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * return: un valor booleano correspondiente a si es posible hacer determinada accion o no.
+     * 
+     */
     public double extraer(double p_importe) {
         double extraccion = this.getSaldo() - p_importe;
         this.setSaldo(extraccion);

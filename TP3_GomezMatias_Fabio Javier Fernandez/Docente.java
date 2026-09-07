@@ -9,14 +9,14 @@
  */
 public class Docente {
     
-    //atributos
+    
     
     private String nombre;
     private String grado;
     private double sueldoBasico;
     private double asignacionFamiliar;
     
-    //metodos
+   
     
     /**
      * 
@@ -33,7 +33,7 @@ public class Docente {
         
     }
     
-    /*
+    /**
      * 
      * Calcula el sueldo del docente al sumar el sueldo basico con la asignacion famiiar del Docente.
      * 
@@ -50,7 +50,7 @@ public class Docente {
         return this.getSueldoBasico() + this.getAsignacionFamiliar();
     }
     
-    /*
+    /**
      * 
      * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
      * 
@@ -88,7 +88,7 @@ public class Docente {
         
     }
     
-     /*
+     /**
      * 
      * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
      * 

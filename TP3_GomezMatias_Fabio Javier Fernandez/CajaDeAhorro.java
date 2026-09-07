@@ -12,7 +12,16 @@ public class CajaDeAhorro
     private int extraccionesPosibles;
     private Persona titular;
  
-    // Constructor sin saldo (debe quedar en 0)
+    
+    
+    /**
+     * Constructores sobrecargadso, permiten realizar instancias de un objeto con saldo o sin saldo
+     * 
+     * param: datos del mismo tipo que los atributos del objeto.
+     * 
+     * 
+     */
+    
     public CajaDeAhorro(int p_nroCuenta, Persona p_titular) {
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
@@ -20,7 +29,7 @@ public class CajaDeAhorro
         this.setExtraccionesPosibles(10);
     }
  
-    // Constructor con saldo inicial
+    
     public CajaDeAhorro(int p_nroCuenta, Persona p_titular, double p_saldo) {
         this.setNroCuenta(p_nroCuenta);
         this.setTitular(p_titular);
@@ -28,7 +37,9 @@ public class CajaDeAhorro
         this.setExtraccionesPosibles(10);
     }
  
-    // Getters y Setters
+    /**
+     *Getters y Setters
+     */
     public int getNroCuenta() {
         
         return this.nroCuenta;
@@ -65,13 +76,25 @@ public class CajaDeAhorro
         this.extraccionesPosibles = p_extracciones;
     }
  
-    // Sólo suma el importe al saldo
+    /**
+     * Modifica el atributo de saldo de un objeto CajaDeAhorro mediante una variable del tipo double ingresada por el usuario.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * 
+     * 
+     */
     public void depositar(double p_importe) {
         double deposito = this.getSaldo() + p_importe;
         this.setSaldo(deposito);
     }
  
-    // Devuelve true si el importe no supera el saldo y quedan extracciones disponibles
+    /**
+     * Define si la extraccion de dinero solicitada por el usuario es valida o posible.
+     * 
+     * param: Un atributo de tipo double ingresado por teclado
+     * return: un valor booleano correspondiente a si es posible hacer determinada accion o no.
+     * 
+     */
     public boolean puedeExtraer(double p_importe) {
         double extraccion = p_importe;
         if(extraccion <= this.getSaldo() && this.getSaldo() > 0 && this.getExtraccionesPosibles() > 0){
@@ -81,17 +104,24 @@ public class CajaDeAhorro
         }
     }
  
-    // Realiza efectivamente la extracción y descuenta 1 a extraccionesPosibles
+       /**
+         * Realiza la extraccion de dinero solicitada por el usuario cuando es valida.
+         * 
+         * param: Un atributo de tipo double ingresado por teclado. 
+         * 
+         */
     private void extraccion(double p_importe) {
         double extraccion = this.getSaldo() - p_importe;
         this.setSaldo(extraccion);
         this.setExtraccionesPosibles(this.getExtraccionesPosibles() - 1);
     }
  
-    // Coordina la extracción: llama a puedeExtraer(), y según el resultado
-    // ejecuta extraccion() o informa el motivo por el cual no se pudo extraer
-    // - "No tiene habilitadas mas extracciones!" si extraccionesPosibles == 0
-    // - "No puede extraer mas que el saldo!" si p_importe > saldo
+       /**
+         * Inicia el proceso para ver si es posible la extraccion, caso contrario imprime un mensaje que especifica lo contrario
+         * 
+         * param: Un atributo de tipo double ingresado por teclado. 
+         * 
+         */
     public void extraer(double p_importe) {
        if(!puedeExtraer(p_importe)){
             System.out.println(this.getExtraccionesPosibles() > 0 ? "No puede extraer mas que el saldo!" : "No tiene habilitadas mas extracciones!");

@@ -9,7 +9,7 @@ import java.util.Random;
 public class GestionHospita
 {
         public static void main(String[] args) {
-        // TODO: instanciar localidades, paciente y hospital, y llamar a consultaDatosFiliatorios()
+        
         
         Scanner teclado = new Scanner(System.in);
         System.out.println("----- Registro del paciente ----");

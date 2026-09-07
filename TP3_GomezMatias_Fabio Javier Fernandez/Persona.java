@@ -34,7 +34,9 @@ public class Persona
         this.setApellido(p_apellido);
         this.setFechaNacimiento(p_fecha);
     }
-    
+    /**
+     * Getters y setters
+     */
     private void setDNI(int p_dni){
          this.nroDni = p_dni;
      }
@@ -100,7 +102,12 @@ public class Persona
         System.out.println("Nombre y Apellido: " + nomYApe());
         System.out.println("DNI: " +  getDNI() + " " + "Edad: " + edad() + " " + "años");
     }
-    
+    /**
+     * Define si es el dia del cumpleaños comparando el atributo Calendar de fechaNacimiento con la fecha actual. 
+     * 
+     * return:  Devuelve un valor booleano true o false
+     * 
+     */
     public boolean esCumpleaños(){
         Calendar fechaHoy = new GregorianCalendar();
   
