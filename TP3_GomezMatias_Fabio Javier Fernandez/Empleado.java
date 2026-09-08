@@ -130,7 +130,7 @@ public class Empleado
       public int antiguedad(){
         Calendar fechaHoy = new GregorianCalendar();
         int anioHoy = fechaHoy.get(Calendar.YEAR);
-        return anioHoy - getAnioIngreso();
+        return anioHoy - this.getAnioIngreso();
       }
         /**
          * Metodos descuento() y adicional() trabajan con el atributo sueldo basico para realizar los 
@@ -146,23 +146,23 @@ public class Empleado
         
       private double adicional(){
             
-         if(antiguedad() < 2) {
-             return getSueldoBasico()*0.02;
+         if(this.antiguedad() < 2) {
+             return this.getSueldoBasico()*0.02;
          } else {
-             if(antiguedad() >= 2 && antiguedad() < 10){
-                  return getSueldoBasico()*0.04;
+             if(this.antiguedad() >= 2 && this.antiguedad() < 10){
+                  return this.getSueldoBasico()*0.04;
              } else {
-                  return getSueldoBasico()*0.06;
+                  return this.getSueldoBasico()*0.06;
              }
          }
       }
         
       private double descuento(){
-            return (sueldoBasico * 0.02) + 1500;
+            return (this.getSueldoBasico() * 0.02) + 1500;
       }
         
       public double sueldoNeto(){
-            return (getSueldoBasico() + adicional()) - descuento();
+            return (this.getSueldoBasico() + this.adicional()) - this.descuento();
       }
         
       /**
@@ -170,12 +170,12 @@ public class Empleado
       * impresion de los datos solicitados.
       */
       public String nomYApe(){
-                return getNombre() + "," + " " + getApellido();
+                return this.getNombre() + "," + " " + this.getApellido();
                 
       }
         
       public String apeYNom(){
-            return getApellido() + "," + getNombre();
+            return this.getApellido() + "," + this.getNombre();
             
       }
         
@@ -186,16 +186,16 @@ public class Empleado
       */ 
         
       public void mostrar(){
-            System.out.println("Nombre y Apellido: " + nomYApe());
-            System.out.println("Cuil: " + getCuil() + " " + "Antiguedad: " + antiguedad() + " " +
+            System.out.println("Nombre y Apellido: " + this.nomYApe());
+            System.out.println("Cuil: " + this.getCuil() + " " + "Antiguedad: " + this.antiguedad() + " " +
             "años de servicio");
-            System.out.println("Sueldo Neto: $" + sueldoNeto());
+            System.out.println("Sueldo Neto: $" + this.sueldoNeto());
             System.out.println(this.getJefe() == null ? "Gerente General" : "Responde a: " +
             this.getJefe().apeYNom());
       }
         
       public String mostrarLinea(){
-         return getCuil() + " " + apeYNom() + "................. $" + sueldoNeto();
+         return this.getCuil() + " " + this.apeYNom() + "................. $" + this.sueldoNeto();
       }
       
       public boolean esAniversario() {

@@ -41,7 +41,7 @@ public class Mujer {
         
     }
     
-     /*
+     /**
      * 
      * 
      * @author Fernandez Fabio Javier y Matias Nicolas Gomez
@@ -59,7 +59,7 @@ public class Mujer {
         
     }
     
-    /*
+    /**
      * 
      * 
      * @author Fernandez Fabio Javier y Matias Nicolas Gomez
@@ -75,7 +75,7 @@ public class Mujer {
         
     }
     
-    /*
+    /**
      * 
      * 
      * @author Fernandez Fabio Javier y Matias Nicolas Gomez
@@ -90,7 +90,7 @@ public class Mujer {
         
     }
     
-    /*
+    /**
      * 
      * Imprime por pantalla los datos solicitados por el cliente
      * 
@@ -107,7 +107,7 @@ public class Mujer {
                             
     }
     
-    /*
+    /**
      * 
      * Imprime por pantalla los datos solicitados por el cliente
      * 
@@ -132,9 +132,9 @@ public class Mujer {
             
     }
         
-        /*
+    /**
      * 
-     * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
+     * Setters que corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
      * 
      * @author Fernandez Fabio Javier y Matias Nicolas Gomez
      * @version 1.0
@@ -174,7 +174,7 @@ public class Mujer {
         
     }
     
-    /*
+    /**
      * 
      * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
      * 
