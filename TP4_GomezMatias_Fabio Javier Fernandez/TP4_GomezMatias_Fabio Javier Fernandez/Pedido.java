@@ -25,32 +25,39 @@ public class Pedido {
     
     public Pedido(Calendar p_fecha, Cliente p_cliente, Producto p_productos) {
         
+        ArrayList<Producto> p = new ArrayList<>();
+        p.add(p_productos);
+        
         this.setFecha(p_fecha);
         this.setCliente(p_cliente);
-        this.setProductos(p_productos);
+        this.setProductos(p);
                       
     }
     
     public double totalAlContado() {
         
+        double acumulador = 0;
+        
         for(Producto p : this.getProductos()) {
-            
-            double acumulador;
             
             acumulador += p.precioContado();
             
         }
+        
+        return acumulador;
     }
     
     public double totalFinanciado() {
         
+        double acumulador = 0;
+        
         for(Producto p : this.getProductos()) {
-            
-            double acumulador;
             
             acumulador += p.precioLista();
             
         }
+        
+        return acumulador;
     }
     
     public boolean agregarProducto(Producto p_producto) {
@@ -75,6 +82,69 @@ public class Pedido {
         
     }
     
+    public void mostrar() {
+        
+        System.out.println("******Detalle de pedido****** " + 
+                           this.mostrarFecha());
+        System.out.println("Producto \t Precio Lista \t Precio Contado");
+        
+        System.out.println("-------------------------------------------");
+        for(Producto p : this.getProductos()) {
+            
+            System.out.println(p.mostrarLinea());
+            
+        }
+            
+        System.out.println("-------------------------------------------");
+        
+        System.out.println("*** Total ------" + 
+                            this.totalFinanciado() + "\t" + this.totalAlContado());
+    }
     
+    public String mostrarFecha(){
+        
+        Calendar fecha = this.getFecha();
+        Locale espanol = new Locale("es", "ES");
+        
+        return this.getFecha().DAY_OF_MONTH + " de " + 
+        this.getFecha().getDisplayName(this.getFecha().MONTH, this.getFecha().LONG, espanol);
+    }
     
+    private void setProductos(ArrayList<Producto> p_producto) {
+        
+        this.productos = p_producto;
+        
+    }
+    
+    private void setFecha(Calendar p_fecha) {
+        
+        this.fecha = p_fecha;
+        
+    }
+    
+    private void setCliente(Cliente p_cliente) {
+        
+        this.clientes = p_cliente;
+        
+    }
+    
+    public ArrayList<Producto>  getProductos() {
+        
+        return this.productos;
+        
+    }
+    
+    public Calendar  getFecha() {
+        
+        return this.fecha;
+        
+    }
+    
+    public Cliente  getCliente() {
+        
+        return this.clientes;
+        
+    }
+    
+            
 }
