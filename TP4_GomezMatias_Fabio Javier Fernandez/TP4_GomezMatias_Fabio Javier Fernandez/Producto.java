@@ -20,7 +20,7 @@ public class Producto
     private Laboratorio laboratorio;
 
     //metodos
-    /*
+    /**
      * Constructor de la clase Producto, se trata de un constructor sobrecargado, dada la
      * capacidad de posee dos constructores que se diferencian con sus parametros
      * 
@@ -52,7 +52,7 @@ public class Producto
         
     }
     
-    /*
+    /**
      * 
      * Imprime por pantalla los datos solicitados por el cliente
      * 
@@ -77,7 +77,7 @@ public class Producto
     
     
     
-    /*
+    /**
      * 
      * Ajusta la cantidad de stock disponible al sumar o restar la cantidad recibida por parametro.
      * 
@@ -95,7 +95,7 @@ public class Producto
     
     
     
-    /*
+    /**
      * 
      * Calcula el stock valorizado al multiplicar el stock con el costo y añadir una rentabilidad del 12%
      * 
@@ -114,7 +114,7 @@ public class Producto
     }
     
     
-    /*
+    /**
      * 
      * Calcula el precio de lista al añadir una rentabilidad del 12% al costo
      * 
@@ -134,7 +134,7 @@ public class Producto
     
     
     
-    /*
+    /**
      * 
      * Calcula el precio de contado al aplicar un descuento del 5%
      * 
@@ -153,7 +153,7 @@ public class Producto
     }
     
     
-    /*
+    /**
      * 
      * Retorna un string co el siguiente formato "Jabón Deluxe 11.20 10.64"
      * 
@@ -165,12 +165,13 @@ public class Producto
     
     public String mostrarLinea() {
         
-        return this.getDescripcion() + " " + this.precioLista() + " " + this.precioContado();
+        return String.format("%-25s %-15.2f %-15.2f",
+        this.getDescripcion(), this.precioLista(), this.precioContado());
         
     }
     
     
-     /*
+     /**
      * 
      * Permite ajustar el porcentaje de punto de reposicion
      * 
@@ -186,7 +187,7 @@ public class Producto
         
     }
     
-     /*
+     /**
      * 
      * Permite ajustar el valor de existencia minima
      * 
@@ -202,7 +203,7 @@ public class Producto
         
     }
     
-    /*
+    /**
      * 
      * Setters qe corresponden cada clase, cada uno se encarga de settear el atributo correspondiente
      * 
@@ -262,7 +263,7 @@ public class Producto
     }
     
     
-    /*
+    /**
      * 
      * los getters que corresponden a cada clase, cada uno se encarga de retornar el atributo correspondiente
      * 

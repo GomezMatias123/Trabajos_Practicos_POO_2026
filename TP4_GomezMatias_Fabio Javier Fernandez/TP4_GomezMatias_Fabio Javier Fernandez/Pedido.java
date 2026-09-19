@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Pedido here.
+ * Es una abtraccion un pedido realizado por un cliente.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -86,7 +86,7 @@ public class Pedido {
         
         System.out.println("******Detalle de pedido****** " + 
                            this.mostrarFecha());
-        System.out.println("Producto \t Precio Lista \t Precio Contado");
+        System.out.println(String.format("%-25s %-15s %-15s", "Producto", "Precio Lista", "Precio Contado"));
         
         System.out.println("-------------------------------------------");
         for(Producto p : this.getProductos()) {
@@ -97,8 +97,8 @@ public class Pedido {
             
         System.out.println("-------------------------------------------");
         
-        System.out.println("*** Total ------" + 
-                            this.totalFinanciado() + "\t" + this.totalAlContado());
+        System.out.println(String.format("%-25s %-15.2f %-15.2f",
+                            "Total", this.totalFinanciado(), this.totalAlContado()));
     }
     
     public String mostrarFecha(){
