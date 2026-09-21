@@ -128,7 +128,7 @@ public class TomaPedido
             if(respuesta != 0){
                 System.out.println("Indique con el indice que producto desea quitar");
                 int indiceProducto = teclado.nextInt();
-                Producto ProductoRemovido = pedidoActual.getProductos().get(indiceProducto - 1);
+                Producto ProductoRemovido = (Producto) pedidoActual.getProductos().get(indiceProducto - 1);
                 System.out.println(pedidoActual.quitarProducto(ProductoRemovido) ? "Producto removido con exito" : "Fallo en remover el producto");
             }
           }

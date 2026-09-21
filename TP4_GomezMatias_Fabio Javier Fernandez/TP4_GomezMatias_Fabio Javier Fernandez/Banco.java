@@ -13,6 +13,14 @@ public class Banco
     private Localidad localidad;
     private ArrayList<Empleado> empleados;
     private ArrayList <CuentaBancaria> cuentas;
+    
+    /**
+     * 
+     * 
+     * Constructores sobrecargados de la clase banco
+     * 
+     * 
+     */
 
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, Empleado p_empleado) {
         ArrayList <Empleado> e = new ArrayList<>();
@@ -40,7 +48,7 @@ public class Banco
     }
     
     /**
-     * Getters y setters
+     * Getters y setters, adders y removers
      */
     
     public String getNombre() {
@@ -103,6 +111,12 @@ public class Banco
             return true;
         }
     }
+    
+    /**
+     * 
+     * 
+     * Imprime la lista de datos solicitada
+     */
 
     public void listarSueldos() {
         if(this.getEmpleados().isEmpty()){
@@ -116,6 +130,13 @@ public class Banco
             System.out.println("-----------------------------------");
         }
     }
+    
+    /**
+     * 
+     * calcula la cantidad total a pagar de los sueldos de los empleados a traves de un acumulador
+     * retorna un double que representa la cantidad a pagar de los sueldos
+     * 
+     */
 
     public double sueldosAPagar() {
         double totalAPagar = 0;
@@ -124,6 +145,12 @@ public class Banco
         }
         return totalAPagar;
     }
+    
+    /**
+     * 
+     * imprime los datos solicitados
+     * 
+     */
 
     public void mostrar() {
         System.out.println("Banco: " + this.getNombre() + " " + "Sucursal: " + this.getNroSucursal());
@@ -131,6 +158,12 @@ public class Banco
         listarSueldos();
         System.out.println("Total a Pagar" +  "................. $ " + this.sueldosAPagar()); 
     }
+    
+    /**
+     * 
+     * agrega una cuentaBancaria
+     * retorna un bool que depende de si se logro añadir la cuenta
+     */
     
     public boolean agregarCuentaBancaria(CuentaBancaria p_cuenta) {
         CuentaBancaria nuevaCuenta = p_cuenta;
@@ -141,6 +174,12 @@ public class Banco
             return false;
         }
     }
+    
+    /**
+     * 
+     * quita una cuenta bancaria
+     * retorna un bool dependiendo de si se logro remover la cuenta
+     */
 
     public boolean quitarCuentaBancaria(CuentaBancaria p_cuenta) {
         CuentaBancaria eliminarCuenta = p_cuenta;
@@ -151,6 +190,11 @@ public class Banco
             return true;
         }
     }
+    
+    /**
+     * 
+     * imprime una lista de las cuentas que tiene saldo 0
+     */
     
     public void listarCuentasConSaldoCero(){
         System.out.println("Cuentas sin saldo: ");
@@ -163,6 +207,13 @@ public class Banco
         System.out.println("---------------------------------------------------");
     }
     
+    /**
+     * 
+     * crea una lista de titurales
+     * retorna un HashSet de los titulares de laws cuentas
+     * 
+     */
+    
     public HashSet<Persona> listaDeTitulares(){
         HashSet<Persona> titulares = new HashSet<>();
         for (CuentaBancaria c : this.getCuentas()){
@@ -170,6 +221,12 @@ public class Banco
         }
         return titulares;
     }
+    
+    /**
+     * 
+     * cuenta la cantidad de cuentas activas con saldo mayor a 0 con un acumulador
+     * retorna un valor int que simula ser la cantidad de cuentas activas 
+     */
     
     private int cuentasSaldoActivo(){
         int cuentasActivas = 0;
@@ -180,6 +237,13 @@ public class Banco
         }
         return cuentasActivas;
     }
+    
+    /**
+     * 
+     * imprime los datos solicitados
+     * 
+     * 
+     */
     
     public void mostrarResumen(){
         System.out.println("Banco: " + this.getNombre() + " " + "Sucursal: " + this.getNroSucursal());

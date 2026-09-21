@@ -4,15 +4,15 @@ import java.util.ArrayList;
 /**
  * Es una abtraccion un pedido realizado por un cliente.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Gomez Matias Nicolas, Fernandez Fabio Javier)
+ * @version (v1.0)
  */
 public class Pedido {
     
     //atributos
     
     private Calendar fecha;
-    private ArrayList<Producto> productos;
+    private ArrayList productos;
     private Cliente clientes;
     
     public Pedido(Calendar p_fecha, Cliente p_cliente, ArrayList<Producto> p_productos) {
@@ -23,9 +23,15 @@ public class Pedido {
                       
     }
     
+    /**
+     * 
+     * constructores de la clase pedido
+     * 
+     */
+    
     public Pedido(Calendar p_fecha, Cliente p_cliente, Producto p_productos) {
         
-        ArrayList<Producto> p = new ArrayList<>();
+        ArrayList p = new ArrayList<>();
         p.add(p_productos);
         
         this.setFecha(p_fecha);
@@ -34,11 +40,20 @@ public class Pedido {
                       
     }
     
+    /**
+     * 
+     * calcula el total al contado de los productos
+     * retorna el total al contado de la lista
+     * 
+     */
+    
     public double totalAlContado() {
         
         double acumulador = 0;
         
-        for(Producto p : this.getProductos()) {
+        for(int i = 0; i< this.getProductos().size(); i++) {
+            
+            Producto p = (Producto)  this.getProductos().get(i);
             
             acumulador += p.precioContado();
             
@@ -47,11 +62,20 @@ public class Pedido {
         return acumulador;
     }
     
+    /**
+     * 
+     * calcula el total al contado de los productos
+     * retorna el total al contado de la lista
+     * 
+     */
+    
     public double totalFinanciado() {
         
         double acumulador = 0;
         
-        for(Producto p : this.getProductos()) {
+        for(int i = 0; i< this.getProductos().size(); i++) {
+            
+            Producto p = (Producto)  this.getProductos().get(i);
             
             acumulador += p.precioLista();
             
@@ -59,6 +83,13 @@ public class Pedido {
         
         return acumulador;
     }
+    
+    /**
+     * 
+     * agrega un producto a la lista 
+     * retorna un bool dependiendo del exito al añadir al producto
+     * 
+     */
     
     public boolean agregarProducto(Producto p_producto) {
         Producto ingresoProducto = p_producto;
@@ -71,6 +102,13 @@ public class Pedido {
         
     }
     
+    /**
+     * 
+     * cquita un producto de la lista
+     * al finalizar retorna un bool segun que resultado se haya dado al quitar el producto
+     * 
+     */
+    
     public boolean quitarProducto(Producto p_producto) {
         Producto  retiroProducto = p_producto;
         productos.remove(retiroProducto);
@@ -82,6 +120,12 @@ public class Pedido {
         
     }
     
+    /**
+     * 
+     * imprime los datos solicitados
+     * 
+     */
+    
     public void mostrar() {
         
         System.out.println("******Detalle de pedido****** " + 
@@ -89,7 +133,9 @@ public class Pedido {
         System.out.println(String.format("%-25s %-15s %-15s", "Producto", "Precio Lista", "Precio Contado"));
         
         System.out.println("-------------------------------------------");
-        for(Producto p : this.getProductos()) {
+        for(int i = 0; i< this.getProductos().size(); i++) {
+            
+            Producto p = (Producto)  this.getProductos().get(i);
             
             System.out.println(p.mostrarLinea());
             
@@ -101,6 +147,12 @@ public class Pedido {
                             "Total", this.totalFinanciado(), this.totalAlContado()));
     }
     
+    /**
+     * 
+     * retorna un string con los datos solicitados
+     * 
+     */
+    
     public String mostrarFecha(){
         
         Calendar fecha = this.getFecha();
@@ -110,7 +162,12 @@ public class Pedido {
         this.getFecha().getDisplayName(this.getFecha().MONTH, this.getFecha().LONG, espanol);
     }
     
-    private void setProductos(ArrayList<Producto> p_producto) {
+    /**
+     * 
+     * setters y getters respondables de cada atributo o v. instancia
+     */
+    
+    private void setProductos(ArrayList p_producto) {
         
         this.productos = p_producto;
         
@@ -128,7 +185,7 @@ public class Pedido {
         
     }
     
-    public ArrayList<Producto>  getProductos() {
+    public ArrayList getProductos() {
         
         return this.productos;
         
