@@ -36,6 +36,16 @@ public class Curso{
         
     }
     
+    public Curso(String p_nombre, Alumno p_alumno) {
+        
+        HashMap<Integer, Alumno> a = new HashMap<>();
+        
+        this.setNombre(p_nombre);
+        this.setAlumnos(a);
+        inscribirAlumno(p_alumno);
+        
+    }
+    
     /**
      * 
      * añade un alumno al HashMap
