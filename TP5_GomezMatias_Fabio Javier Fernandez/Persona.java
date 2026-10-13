@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * Write a description of class persona here.
+ * Abstaccion del concepto de Persona
  * 
  * @author (Matias Gomez, Fabio Javier Fernandez) 
  * @version (v1.0)
