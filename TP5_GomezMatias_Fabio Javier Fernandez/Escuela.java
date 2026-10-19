@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * Write a description of class Escuela here.
+ * Clase ejecutable de la clase Alumno
  * 
  * @author (your name) 
  * @version (a version number or a date)

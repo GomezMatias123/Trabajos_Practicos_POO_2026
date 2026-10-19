@@ -1,9 +1,9 @@
 import java.util.*;
 /**
- * Write a description of class Alumno here.
+ * Es una abstraccion de la clase alumno actualizada para heredar la clase persona
  * 
  * @author (Gomez Matias, Fabio Javier Fernandez) 
- * @version (v1.0)
+ * @version (v2.0)
  */
 public class Alumno extends Persona
 {
@@ -21,6 +21,17 @@ public class Alumno extends Persona
         this.nota1 = 0;
         this.nota2 = 0;
     }
+    
+    
+    public Alumno(int p_lu, int p_dni, String p_nombre, String p_apellido, int p_anio){
+        
+        super(p_dni, p_nombre, p_apellido, p_anio);
+        this.setLU(p_lu);
+        this.nota1 = 0;
+        this.nota2 = 0;
+    }
+    
+    
     
     /**
      * Setter y getter de los objetos de la clase Alumno.
@@ -92,8 +103,13 @@ public class Alumno extends Persona
         
     }
 
-
-  public void mostrar(){
+    /**
+     * 
+     * imprime en pantalla los datos solicitados
+     * 
+     * 
+     */
+    public void mostrar(){
       
         super.mostrar();
         System.out.println("L.U.:  " + this.getLU() + " " + "Notas: " + this.getNota1() + "-" + 

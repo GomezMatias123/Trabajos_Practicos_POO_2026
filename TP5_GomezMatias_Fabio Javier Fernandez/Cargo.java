@@ -1,43 +1,70 @@
 import java.util.*;
+import java.util.Scanner;
 /**
- * Write a description of class Cargo here.
+ * Es una abstaraccion de un cargo simple
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Matias Gomez, Fabio Javier Fernandez) 
+ * @version (v1.0)
+ * 
  */
 public class Cargo
 {
     
     //atributos
     
-    String nombreCargo;
-    double sueldoBasico;
-    int anioIngreso;
-    int horasDeDocencia;
+    private String nombreCargo;
+    private double sueldoBasico;
+    private int anioIngreso;
+    protected int horasDeDocencia;
+    
+    /**
+     * 
+     * Es un contructor de la clase cargo
+     */
     
     public Cargo(String p_nombre, double p_sueldo, int p_anio, int p_horas) {
         
         this.setNombreCargo(p_nombre);
         this.setSueldoBasico(p_sueldo);
         this.setAnioIngreso(p_anio);
-        this.setHorasDeDocencia(p_horas);
+        
+        Scanner teclado = new Scanner(System.in);
+        this.setHorasDeDocencia(p_horas, teclado);
         
     }
+    
+    /**
+     * 
+     * retorna la antiguedad de un profesor en un cargo simple
+     * 
+     */
     
     
     public int antiguedad() {
         
         Calendar fechaHoy = new GregorianCalendar();
         
-        return fechaHoy.YEAR - this.getAnioIngreso();
+        return fechaHoy.get(Calendar.YEAR) - this.getAnioIngreso();
         
     }
     
+    /**
+     * 
+     * retorna el adicional por antiguedad
+     * 
+     */
+    
     private double adicionalXAntiguedad() {
         
-        return this.getSueldoBasico() * (this.antiguedad()/100);
+        return (this.getSueldoBasico() * (this.antiguedad() * 0.010));
         
     }
+    
+    /**
+     * 
+     * retorna un valor que representa el sueldo
+     * 
+     */
     
     public double sueldoDelCargo() {
         
@@ -45,12 +72,25 @@ public class Cargo
         
     }
     
+    /**
+     * 
+     * imprime en pantalla los datos solicitados
+     * 
+     */
+    
     public void mostrarCargo() {
         
-        System.out.println(this.getNombreCargo() + "-Sueldo Basico: " + this.getSueldoBasico() + 
-        "-Sueldo Cargo: " + this.sueldoDelCargo() + "-Antiguedad: " + this.antiguedad());
+        System.out.println(this.getNombreCargo() + " - Sueldo Basico: " + this.getSueldoBasico() + 
+        " - Sueldo Cargo: " + this.sueldoDelCargo() + " - Antiguedad: " + this.antiguedad());
+        System.out.println("Horas Docencia: " + this.getHorasDeDocencia());
         
     }
+    
+    /**
+     * 
+     * setters y getters que corresponden
+     * 
+     */
     
     
     
@@ -72,10 +112,19 @@ public class Cargo
         
     }
     
-    private void setHorasDeDocencia(int p_horas) {
+    private void setHorasDeDocencia(int p_horas, Scanner teclado) {
         
-        this.horasDeDocencia = p_horas;
-        
+          while(p_horas > 10) {
+            
+            System.out.println("No se pueden tener mas de 10 horas de docencia! Ingrese un valor valido");
+            p_horas = teclado.nextInt();
+            
+            
+          }
+            
+          this.horasDeDocencia = p_horas;
+            
+          
     }
     
     public String getNombreCargo() {

@@ -1,10 +1,10 @@
 import java.util.*;
 
 /**
- * Write a description of class Exclusivo here.
+ * Clase que hereda de la clase cargo, es una abstraccion de uno exclusivo
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Matias Gomez, Fabio Javier Fernandez) 
+ * @version (v1.0)
  */
 public class Exclusivo extends Cargo
 {
@@ -12,16 +12,30 @@ public class Exclusivo extends Cargo
     
     //atributos
     
-    int horasDeInvestigacion;
-    int horasDeExtension;
+    private int horasDeInvestigacion;
+    private int horasDeExtension;
+    
+    /**
+     * 
+     * Es un constructor de la clase Exclusivo
+     * 
+     */
     
     public Exclusivo( int p_horasInv, int p_horasEx, String p_nombre, double p_sueldo, int p_anio, int p_horasCargo) {
         
-        super(p_nombre, p_sueldo, p_anio, p_horasCargo);
+        super(p_nombre, p_sueldo, p_anio, 0);
+        this.setHorasDeDocencia(p_horasCargo);
         this.setHorasDeInvestigacion(p_horasInv);
         this.setHorasDeExtension(p_horasEx);
         
     }
+    
+    /**
+     * 
+     * imprime en pantalla los datos solicitados
+     * 
+     */
+    
     
     public void mostrarCargo() {
         
@@ -29,6 +43,18 @@ public class Exclusivo extends Cargo
         System.out.println("----Cargo de caracter Exclusivo----");
         System.out.println("Horas investigacion: " + this.getHorasDeInvestigacion());
         System.out.println("Horas Extension: " +    this.getHorasDeExtension());
+        
+    }
+    
+    /**
+     * 
+     * setters y getters que corresponden
+     * 
+     */
+    
+    private void setHorasDeDocencia(int p_horas) {
+        
+        this.horasDeDocencia = p_horas;
         
     }
     
