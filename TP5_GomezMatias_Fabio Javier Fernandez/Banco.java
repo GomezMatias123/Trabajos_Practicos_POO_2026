@@ -64,13 +64,6 @@ public class Banco
         } else {
              cuentaCorriente = new CuentaCorriente(nuevoNroCuenta, persona);
         }
-                    
-        
-        System.out.println("----- Cuenta bancaria -----");
-        
-        System.out.println("ingrese saldo inicial a depositar caso contrario solo coloque el valor: 0");
-        saldoInicial = teclado.nextDouble(); 
-        teclado.nextLine();
         
             
         int opcion = -1;

@@ -46,11 +46,11 @@ public class Profesor extends Persona
         
         super(p_dni, p_nombre, p_apellido, p_fecha);
         
-        ArrayList<Cargo> cargos = new ArrayList<>();
-        cargos.add(p_cargo);
+        
+        this.setCargos (new ArrayList<>());
+        this.añadirCargo(p_cargo);
         
         this.setTitulo(p_titulo);
-        this.setCargos(cargos);
         
     }
     
@@ -129,7 +129,7 @@ public class Profesor extends Persona
     
     public String mostrarLinea() {
         
-        return "DNI: " +      super.getDNI() + " - Nombre: " +  super.nomYApe() + " - Sueldo Total: " + this.sueldoTotal();
+        return "DNI: " +      this.getDNI() + " - Nombre: " +  this.nomYApe() + " - Sueldo Total: " + this.sueldoTotal();
         
     }
     

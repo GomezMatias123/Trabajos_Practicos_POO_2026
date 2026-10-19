@@ -77,6 +77,7 @@ public class Zoologico
         
         for(Visitante v : this.getVisitantes()) {
             
+            System.out.println("-----------------------------------------------");
             v.listarPorFecha(p_fecha, p_visitante);
             
         }
@@ -92,6 +93,7 @@ public class Zoologico
         
         for(Visitante v : this.getVisitantes()) {
             
+            System.out.println("-----------------------------------------------");
             v.listarPorFecha(p_fecha,  v.tipoVisitante());
             
         }
