@@ -31,11 +31,26 @@ public class Comun extends Etiqueta
         return this.plus;
     }
     
+    
+    /**
+     * 
+     * Realiza el calculo para devolver un valor que representa el precio de una clase Comun que hereda a la clase abstracta etiqueta
+     * 
+     * @param: Un entero que representa la cantidad de etiquetas de este tipo.
+     * 
+     */
     public double precio(int q){
         int cantidad = q;
         return (cantidad * this.getCosto() + this.getPlus()) - this.descuento(cantidad);
     }
     
+    /**
+     * 
+     * Realiza el calculo para el descuento correspondiente en el tipo de etiquetas comunes.
+     * 
+     * @param: Un entero que representa la cantidad de etiquetas de este tipo.
+     * 
+     */
     private double descuento(int q){
         double prePrecio = q * this.getCosto() + this.getPlus();
         
@@ -50,11 +65,20 @@ public class Comun extends Etiqueta
             return prePrecio * porcentajeDesc;
         }
     }
-    
+    /**
+     * 
+     * Devuelve el valor String del nombre del tipo de etiqueta correspondiente.
+     * 
+     */
     protected String tipo(){
         return "Común";
     }
     
+    /**
+     * 
+     * Sobreescribe el metodo heredado toString para adicionar informacion especifca del tipo de etiquetas comunes.
+     * 
+     */
     public String toString(){
         return super.toString() + " - "  + "Diseño: $" + this.getPlus();
     }

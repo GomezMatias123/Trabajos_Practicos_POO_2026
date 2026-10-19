@@ -16,6 +16,14 @@ public abstract class Etiqueta
         
     }
     
+    
+    /**
+     * 
+     * Setters y getters, cada uno se encarga de settear el atributo correspondiente y getters nos trae el valor de cada atributo.
+     * 
+     * @param: cada setter recibe como parametro una representacion del atributo correspondiente
+     * 
+     */
     private void setCosto(double p_costo){
         this.costo = p_costo;
     }
@@ -24,12 +32,25 @@ public abstract class Etiqueta
         return this.costo;
     }
     
+    /**
+     * 
+     * Metodo abstracto sin implementacion que se realiza o especializa en la clase que hereda sus atributos y metodos.
+     * 
+     */
     public abstract double precio(int q);
-    
+    /**
+     * 
+     * Imprime la informacion general que necesitan las clases que heredan los atributos y metodos de esta clase abstracta.
+     * 
+     */
     public String toString(){
         return " tipo " + this.tipo() + " - " + "Costo: $" + this.getCosto();
     }
-    
+    /**
+     * 
+     * Metodo abstracto sin implementacion que se realiza o especializa en la clase que hereda sus atributos y metodos.
+     * 
+     */
     protected abstract String tipo();
 
     

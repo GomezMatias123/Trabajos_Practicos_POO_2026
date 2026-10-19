@@ -51,6 +51,11 @@ public class Renglon
         return this.item;
     }
     
+    /**
+     * 
+     * Imprime la informacion general de un renglon correspondiente al pedido.
+     * 
+     */
     public void mostrar(){
         System.out.println(this.getCantidad() + " Etiquetas de "+ this.getItem().toString());
     }

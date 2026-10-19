@@ -32,11 +32,22 @@ public class Premiun extends Etiqueta
         return this.colores;
     }
     
+    /**
+     * 
+     * Calcula el precio de etiquetas del tipo premiun
+     * 
+     * @param: Un entero que representa la cantidad de etiquetas de este tipo.
+     * 
+     */
     public double precio(int q){
         int cantidad = q;
         return (this.getCosto() * this.plus()) * cantidad;
     }
-    
+    /**
+     * 
+     * Calcula el adicional segun la cantidad de colores en etiquetas premiun.
+     * 
+     */
     private double plus(){
         if(this.colores <= 0){
             return 1;
@@ -50,11 +61,19 @@ public class Premiun extends Etiqueta
             return 1 + (this.getColores()*0.03);
         }
     }
-    
+    /**
+     * 
+     * Devuelve el valor String del nombre del tipo de etiqueta especifico a esta clase.
+     * 
+     */
     protected String tipo(){
         return "Premiun";
     }
-    
+    /**
+     * 
+     * Sobreescribe el metodo heredado toString para adicionar informacion especifca del tipo de etiquetas comunes.
+     * 
+     */
     public String toString(){
         return super.toString() + " - "  + "Colores: " + this.getColores();
     }

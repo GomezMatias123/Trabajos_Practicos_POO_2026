@@ -35,6 +35,12 @@ public class Pedido
         return this.renglones;
     }
     
+    /**
+     * 
+     * Muestra los renglones del pedido completo, suma los totales de etiquetas de cada tipo y el precio individual de cada renglon, al final muestra el total de las etiquetas y el total del 
+     * pedido completo.
+     * 
+     */
     public void mostrar(){
         int i = 0;
         System.out.println("Pedido: ");
@@ -48,6 +54,11 @@ public class Pedido
         System.out.println("--- Total pedido: " + this.totalEtiquetas() + " " + "Etiquetas por un importe total de: $" + " " + this.totalPedido());
     }
     
+    /**
+     * 
+     * Devuelve el total del pedio entre todas la etiquetas de cada renglon.
+     * 
+     */
     private double totalPedido(){
         double  totalPedido = 0;
         for(Renglon r : this.getRenglones()){
@@ -55,6 +66,11 @@ public class Pedido
         }
         return totalPedido;
     }
+    /**
+     * 
+     * Devuelve el total de las etiquetas del pedido completo, sin importar si son premiun o comunes.
+     * 
+     */
     
     private int totalEtiquetas(){
         int etiquetas = 0;
